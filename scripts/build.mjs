@@ -1,12 +1,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validate } from './validate.mjs';
+import { validate, locales } from './validate.mjs';
 
 export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char]));
 const json = value => JSON.stringify(value).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
 const arrow = '<svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#arrow-up-right"></use></svg>';
+const articleURL = article => article.url || `/writing/${article.slug}/`;
 const renderCopy = (key, text) => key.startsWith('note') ? text.split('\n').map((line,i) => i ? escapeHTML(line) : `<b>${escapeHTML(line)}</b>`).join('') : escapeHTML(text);
 
 export function build({ site: supplied, outDir = path.join(root, 'dist'), siteUrl = process.env.SITE_URL } = {}) {
@@ -49,9 +50,9 @@ export function build({ site: supplied, outDir = path.join(root, 'dist'), siteUr
     'meta.imageType': site.meta.image.endsWith('.png') ? 'image/png' : site.meta.image.endsWith('.webp') ? 'image/webp' : 'image/jpeg',
     structuredData: json({ '@context':'https://schema.org', '@type':'Person', name:site.profile.name, url:site.meta.url, jobTitle:site.copy.en.role }),
     projects: site.projects.map((project,i) => `<a class="work-item" href="/work/${project.slug}/"><span class="work-preview" aria-hidden="true"><img src="${escapeHTML(project.image || `/assets/images/project-${i+1}.svg`)}" width="120" height="120" alt="" loading="lazy"></span><span class="work-copy"><span class="work-title">${escapeHTML(project.title)} <span class="work-arrow" aria-hidden="true">${arrow}</span></span><span class="work-description" data-copy="project${i}Description">${escapeHTML(project.description[0])}</span><span class="work-kind">${companyMarkup(project.companyId,false)} · ${escapeHTML(project.label)}</span></span></a>`).join('\n'),
-    experience: site.experience.map((item,i)=>`<article class="experience-item"><span class="experience-period">${escapeHTML(item.period)}</span><div class="experience-copy"><h3>${companyMarkup(item.companyId)}</h3><p class="experience-role">${escapeHTML(item.role)}</p><p data-copy="experience${i}Summary">${escapeHTML(item.summary[0])}</p><span class="experience-location">${escapeHTML(item.location)}</span></div></article>`).join('\n'),
+    experience: site.experience.map((item,i)=>`<article class="experience-item"><span class="experience-period">${escapeHTML(item.period)}</span><div class="experience-copy"><h3>${companyMarkup(item.companyId)}</h3><p class="experience-role">${escapeHTML(item.role)}</p><p data-copy="experience${i}Summary">${escapeHTML(item.summary[0])}</p>${item.highlights ? `<ul class="experience-highlights">${item.highlights.map((highlight,j)=>`<li data-copy="experience${i}Highlight${j}">${escapeHTML(highlight[0])}</li>`).join('')}</ul>` : ''}${item.stack ? `<ul class="experience-stack">${item.stack.map(tool=>`<li>${escapeHTML(tool)}</li>`).join('')}</ul>` : ''}<span class="experience-location">${escapeHTML(item.location)}</span></div></article>`).join('\n'),
     expertise: site.expertise.map((item,i)=>`<div class="expertise-item"><h3 data-copy="expertise${i}Title">${escapeHTML(item.title[0])}</h3><p data-copy="expertise${i}Description">${escapeHTML(item.description[0])}</p></div>`).join('\n'),
-    articleFallback: site.articles.map(article => `<a href="/writing/${article.slug}/">${escapeHTML(article.title)} ${arrow}</a>`).join(''),
+    articleFallback: site.articles.map(article => `<a href="${escapeHTML(articleURL(article))}"${article.url ? ' target="_blank" rel="noreferrer"' : ''}>${escapeHTML(article.title)} ${arrow}</a>`).join(''),
     socials: site.socials.map(link => `<a href="${escapeHTML(link.url)}" target="_blank" rel="noreferrer">${escapeHTML(link.label)} ${arrow}</a>`).join(''),
   };
   for (const [key,value] of Object.entries(site.profile)) tokens[`profile.${key}`] = escapeHTML(value);
@@ -61,16 +62,18 @@ export function build({ site: supplied, outDir = path.join(root, 'dist'), siteUr
     if (!(key in tokens)) throw new Error(`Missing template value: ${key}`);
     return tokens[key];
   }));
-  site.projects.forEach((project,i) => {
-    copy.en.copy[`project${i}Description`] = escapeHTML(project.description[0]);
-    copy.id.copy[`project${i}Description`] = escapeHTML(project.description[1] || project.description[0]);
-  });
-  site.experience.forEach((item,i)=>{ for(const [locale,index] of [['en',0],['id',1]]) copy[locale].copy[`experience${i}Summary`]=escapeHTML(item.summary[index] || item.summary[0]); });
-  site.expertise.forEach((item,i)=>{ for(const [locale,index] of [['en',0],['id',1]]) {
+  site.projects.forEach((project,i) => locales.forEach((locale,index) => {
+    copy[locale].copy[`project${i}Description`] = escapeHTML(project.description[index] || project.description[0]);
+  }));
+  site.experience.forEach((item,i)=>locales.forEach((locale,index)=>{
+    copy[locale].copy[`experience${i}Summary`]=escapeHTML(item.summary[index] || item.summary[0]);
+    (item.highlights || []).forEach((highlight,j)=>{ copy[locale].copy[`experience${i}Highlight${j}`]=escapeHTML(highlight[index] || highlight[0]); });
+  }));
+  site.expertise.forEach((item,i)=>locales.forEach((locale,index)=>{
     copy[locale].copy[`expertise${i}Title`]=escapeHTML(item.title[index] || item.title[0]);
     copy[locale].copy[`expertise${i}Description`]=escapeHTML(item.description[index] || item.description[0]);
-  } });
-  const articles = site.articles.map(article => ({ ...article, image:routeURL(article.image), srcset: `${routeURL(article.image)} 720w`, url: routeURL(`/writing/${article.slug}/`) }));
+  }));
+  const articles = site.articles.map(article => ({ ...article, image:routeURL(article.image), srcset: `${routeURL(article.image)} 720w`, url: routeURL(articleURL(article)) }));
   const profile = { ...site.profile, portrait:routeURL(site.profile.portrait), portraitDark:routeURL(site.profile.portraitDark) };
   for(const pack of Object.values(copy)) for(const key of Object.keys(pack.copy)) pack.copy[key]=htmlURLs(pack.copy[key]);
   put('assets/site-data.js', `// Generated from content/site.json. Edit the source, then rebuild.\nwindow.portfolioData = ${json({ profile, articles })};\nwindow.portfolioLocales = ${json(copy)};\n`);
@@ -86,12 +89,12 @@ export function build({ site: supplied, outDir = path.join(root, 'dist'), siteUr
     const story = project.body.map((paragraph,index)=>`${index < 5 ? `<h2>${['The question','The approach','My contribution','The details','Concept outcome'][index]}</h2>`:''}<p>${escapeHTML(paragraph)}</p>`).join('\n');
     put(`work/${project.slug}/index.html`, page(project.title, project.description[0], `<p class="project-disclosure">${escapeHTML(site.copy.en.demoNotice)}</p><dl class="project-facts">${facts.map(([key,value])=>`<div><dt>${escapeHTML(key)}</dt><dd>${escapeHTML(value)}</dd></div>`).join('')}</dl><img class="article-image" src="${escapeHTML(project.image || `/assets/images/project-${i+1}.svg`)}" width="720" height="405" alt="Abstract illustration for ${escapeHTML(project.title)}">${story}<h2>Areas of contribution</h2><ul class="contribution-list">${project.contributions.map(item=>`<li>${escapeHTML(item)}</li>`).join('')}</ul>`, route));
   });
-  site.articles.forEach(article => {
+  site.articles.filter(article => !article.url).forEach(article => {
     const route = `/writing/${article.slug}/`; routes.push(route);
     put(`writing/${article.slug}/index.html`, page(article.title, article.description[0], `<p>${escapeHTML(site.profile.name)} · ${escapeHTML(article.date)} · ${article.readTime} min read</p>${paragraphs(article.body)}`, route));
   });
   routes.push('/writing/', '/credits/');
-  put('writing/index.html', page('Notes on the work', site.copy.en.writingIntro, site.articles.map(article => `<section><h2><a href="/writing/${article.slug}/">${escapeHTML(article.title)}</a></h2><p>${escapeHTML(article.description[0])}</p></section>`).join(''), '/writing/'));
+  put('writing/index.html', page(site.copy.en.writingHeading, site.copy.en.writingIntro, site.articles.map(article => `<section><h2><a href="${escapeHTML(articleURL(article))}">${escapeHTML(article.title)}</a></h2><p>${escapeHTML(article.description[0])}</p></section>`).join(''), '/writing/'));
   put('credits/index.html', page('Made with a little help.', 'Design references, dependencies, and the people behind the template.', `<section><h2>Design & interaction</h2><p>Template by <a href="https://daniasyrofi.com/">Dani Asyrofi</a>. Editorial references: <a href="https://pedromarques.me/">Pedro Marques</a> and <a href="https://dahbiahmed.com/">Ahmed Dahbi</a>. <a href="https://bencho.dev/">Bencho</a> informed the continuous, interruptible motion guidelines; it is a design reference, not a bundled component.</p></section><section><h2>Open-source dependencies</h2><p><a href="https://github.com/edoardolunardi/kugiri">Kugiri</a> text splitting retains its <a href="/assets/folio/enhancements/vendor/LICENSE">MIT license</a> and <a href="/assets/folio/enhancements/vendor/NOTICE.md">notice</a>. <a href="/assets/icons/HEROICONS-LICENSE.txt">Heroicons</a> retains its MIT license. Font licenses remain beside each typeface under assets/fonts; Caveat's <a href="/assets/folio/enhancements/vendor/caveat/OFL.txt">OFL</a> remains beside its binary.</p></section><section><h2>Company marks</h2><p>Apple and SpaceX logos are shown only as references for fictional concepts. Sources and ownership notes are in the <a href="/assets/images/companies/NOTICE.md">company asset notice</a>. The other organisation marks are original illustrations for the sample data.</p></section><section><h2>Use this template</h2><p><a href="https://github.com/daniasyrofi/syrofolio">Source and setup guide</a>. This release uses a <a href="/LICENSE">source-available license with no template resale</a>. Third-party licenses and rights already granted in earlier releases remain unchanged. Replace the demonstration name and portrait before publishing your own portfolio.</p></section>`, '/credits/', 'Attribution does not imply endorsement.'));
   put('404.html', page('This page has moved.', 'The address may have changed. You can find the work and writing on the homepage.', '<p><a href="/">Return home →</a></p>', '/404.html', ''));
   put('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(route=>`<url><loc>${escapeHTML(absolute(route))}</loc></url>`).join('')}</urlset>`);

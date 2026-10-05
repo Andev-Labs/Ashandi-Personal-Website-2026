@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+  <defs>
+    <style>
+      .sans { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      .mono { font-family: 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+      .meta { font-size: 15px; letter-spacing: 3px; fill: #6b6a66; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#e4572e"/>
+    </marker>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#1c1d21" opacity=".08"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="800" fill="#f3efe6"/>
+  <rect x="0" y="476" width="600" height="250" fill="url(#dots)"/>
+
+  <!-- Masthead -->
+  <text class="sans meta" x="48" y="66">MEDIUM</text>
+  <text class="sans meta" x="552" y="66" text-anchor="end">N° 01</text>
+  <path d="M48 88h504" stroke="#1c1d21" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text class="mono" x="48" y="150" font-size="16" letter-spacing="2" fill="#0a7ea4">REACT · HOOKS · STATE</text>
+  <g class="sans" font-size="56" font-weight="700" letter-spacing="-1.6" fill="#1c1d21">
+    <text x="46" y="222">I Was Vibe</text>
+    <text x="46" y="284">Coding an</text>
+    <text x="46" y="346">Auth Feature</text>
+  </g>
+  <text class="sans" x="48" y="400" font-size="26" fill="#4a4945">and ended up learning</text>
+  <text class="mono" x="48" y="446" font-size="31" font-weight="700" letter-spacing="-.5" fill="#0a7ea4">useSyncExternalStore</text>
+
+  <!-- The experiment: one store, three boxes, only Box A re-renders -->
+  <rect x="48" y="500" width="196" height="196" rx="14" fill="#fff" stroke="#1c1d21" stroke-width="2.5"/>
+  <text class="mono" x="70" y="538" font-size="18" font-weight="700" fill="#1c1d21">store</text>
+  <path d="M70 554h152" stroke="#e2dccf" stroke-width="1.5"/>
+  <rect x="62" y="566" width="168" height="34" rx="6" fill="#e4572e" opacity=".12"/>
+  <g class="mono" font-size="20">
+    <text x="74" y="590" fill="#e4572e" font-weight="700">a: 1</text>
+    <text x="74" y="632" fill="#6b6a66">b: 0</text>
+    <text x="74" y="674" fill="#6b6a66">c: 0</text>
+  </g>
+
+  <path d="M244 583C312 583 304 526 368 526" fill="none" stroke="#e4572e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M244 625C306 625 310 598 372 598" fill="none" stroke="#bdb6a7" stroke-width="2" stroke-dasharray="5 6"/>
+  <path d="M244 667C306 667 310 670 372 670" fill="none" stroke="#bdb6a7" stroke-width="2" stroke-dasharray="5 6"/>
+
+  <rect x="372" y="500" width="180" height="52" rx="10" fill="#fff" stroke="#e4572e" stroke-width="2.5"/>
+  <text class="sans" x="390" y="533" font-size="20" font-weight="700" fill="#1c1d21">Box A</text>
+  <text class="mono" x="536" y="532" font-size="14" font-weight="700" fill="#e4572e" text-anchor="end">renders 2</text>
+
+  <rect x="372" y="572" width="180" height="52" rx="10" fill="#faf8f3" stroke="#cfc8b9" stroke-width="2"/>
+  <text class="sans" x="390" y="605" font-size="20" font-weight="700" fill="#8a877f">Box B</text>
+  <text class="mono" x="536" y="604" font-size="14" fill="#8a877f" text-anchor="end">renders 1</text>
+
+  <rect x="372" y="644" width="180" height="52" rx="10" fill="#faf8f3" stroke="#cfc8b9" stroke-width="2"/>
+  <text class="sans" x="390" y="677" font-size="20" font-weight="700" fill="#8a877f">Box C</text>
+  <text class="mono" x="536" y="676" font-size="14" fill="#8a877f" text-anchor="end">renders 1</text>
+
+  <text class="mono" x="48" y="728" font-size="15" fill="#6b6a66">Object.is(prev, next) → skip</text>
+
+  <!-- Footer -->
+  <path d="M48 752h504" stroke="#1c1d21" stroke-width="1.5"/>
+  <text class="sans meta" x="48" y="782">ASHANDI LEONADI</text>
+  <text class="sans meta" x="552" y="782" text-anchor="end">6 MIN READ</text>
+</svg>

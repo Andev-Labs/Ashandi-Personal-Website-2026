@@ -14,3 +14,12 @@ your own portfolio.
 
 The biotech, precision, climate, and human marks are original illustrative marks
 for fictional organisations in the sample data.
+
+Zero One Group, MapTrack, Happy5: icon marks cropped from the official wordmark SVGs
+supplied by the site owner (2026-10-05). Only the symbol part of each wordmark is
+kept, with a square viewBox; the Zero One Group mark uses #000 instead of currentColor.
+
+Kodegiri: icon mark cropped from the official colour logo supplied by the site owner.
+Rakamin Academy, Smarteschool: SVG recreations traced from the Rakamin apple-touch-icon
+linked from https://app.rakamin.com/ (2026-10-05) and the Smarteschool logo image supplied by
+the site owner, so the marks can render as white silhouettes in dark mode.

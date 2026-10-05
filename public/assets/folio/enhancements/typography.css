@@ -42,8 +42,8 @@
 :root .book-dialog .inspection-copy h2 { font-family: var(--creative-heading-font, Inter, sans-serif); line-height: var(--leading-heading); }
 :root .book-dialog .inspection-copy p { line-height: var(--leading-body); }
 :root .book-dialog .byline { line-height: var(--leading-small); }
-/* Keep room for Japanese glyphs when the language control changes the copy. */
-:root[lang=ja] #main :is(.text-stack > p, .intro-copy p, .about-section > p, .contact-section > p, .inspection-copy p, .role, h2, h3) { line-height: 1.8; }
+/* Keep room for Chinese glyphs when the language control changes the copy. */
+:root[lang=zh] #main :is(.text-stack > p, .intro-copy p, .about-section > p, .contact-section > p, .inspection-copy p, .role, h2, h3) { line-height: 1.8; }
 
 @supports (text-box-trim: trim-both) and (text-box-edge: cap alphabetic) {
   /* Center single-line UI text from its visible cap/descender bounds.

@@ -81,7 +81,7 @@ img { max-width: 100%; height: auto; }
 .language-menu small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; line-height: 1.6; }
 .menu-divider { border-top: 1px solid var(--line); margin: 6px 10px; }
 @keyframes menu-in { from { opacity: 0; transform: translateY(-4px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
-:root[lang=ja] .intro-copy p, :root[lang=ja] .about-section > p, :root[lang=ja] .contact-section > p, :root[lang=ja] .role, :root[lang=ja] h2, :root[lang=ja] .inspection-copy p { letter-spacing: 0; line-height: 1.8; }
+:root[lang=zh] .intro-copy p, :root[lang=zh] .about-section > p, :root[lang=zh] .contact-section > p, :root[lang=zh] .role, :root[lang=zh] h2, :root[lang=zh] .inspection-copy p { letter-spacing: 0; line-height: 1.8; }
 .language { gap: 0; }
 .language button { border: 0; background: transparent; min-width: 38px; min-height: 40px; color: var(--muted); font-size: 11px; letter-spacing: .02em; border-radius: 6px; }
 .language button[aria-pressed=true] { color: var(--ink); font-weight: 550; }
@@ -131,6 +131,7 @@ h1 { font-size: 28px; line-height: 1.25; font-weight: 620; letter-spacing: -.055
 .inline-company { display: inline; white-space: nowrap; color: var(--ink); }
 .inline-company img { display: inline-block; width: 20px; height: 20px; vertical-align: -.25em; object-fit: contain; margin: 0 4px 0 1px; mix-blend-mode: multiply; }
 :root[data-theme=dark] .inline-company img { filter: invert(1); mix-blend-mode: screen; }
+:root[data-theme=dark] .inline-company img:is([data-company=zeroone],[data-company=maptrack],[data-company=happy5],[data-company=kodegiri],[data-company=rakamin],[data-company=smarteschool]) { filter: brightness(0) invert(1); }
 .intro-actions { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
 .contact-link { display: inline-flex; align-items: center; gap: 18px; min-height: 40px; font-size: 14px; font-weight: 500; text-decoration: none; }
 .contact-link span { transition: transform 180ms var(--ease); }

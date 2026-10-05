@@ -360,11 +360,147 @@
             "expertiseIntro",
             "demoNotice"
           ]
+        },
+        "zh": {
+          "type": "object",
+          "properties": {
+            "role": {
+              "type": "string"
+            },
+            "introOne": {
+              "type": "string"
+            },
+            "introTwo": {
+              "type": "string"
+            },
+            "introThree": {
+              "type": "string"
+            },
+            "letsTalk": {
+              "type": "string"
+            },
+            "openNotes": {
+              "type": "string"
+            },
+            "workHeading": {
+              "type": "string"
+            },
+            "workAside": {
+              "type": "string"
+            },
+            "writingHeading": {
+              "type": "string"
+            },
+            "writingIntro": {
+              "type": "string"
+            },
+            "allWriting": {
+              "type": "string"
+            },
+            "shelfHint": {
+              "type": "string"
+            },
+            "aboutHeading": {
+              "type": "string"
+            },
+            "aboutOne": {
+              "type": "string"
+            },
+            "aboutTwo": {
+              "type": "string"
+            },
+            "linkedinHistory": {
+              "type": "string"
+            },
+            "contactHeading": {
+              "type": "string"
+            },
+            "contactCopy": {
+              "type": "string"
+            },
+            "footerNote": {
+              "type": "string"
+            },
+            "rotateHint": {
+              "type": "string"
+            },
+            "readArticle": {
+              "type": "string"
+            },
+            "notePortrait": {
+              "type": "string"
+            },
+            "noteType": {
+              "type": "string"
+            },
+            "noteWork": {
+              "type": "string"
+            },
+            "noteShelf": {
+              "type": "string"
+            },
+            "noteContact": {
+              "type": "string"
+            },
+            "experienceHeading": {
+              "type": "string"
+            },
+            "experienceAside": {
+              "type": "string"
+            },
+            "experienceIntro": {
+              "type": "string"
+            },
+            "expertiseHeading": {
+              "type": "string"
+            },
+            "expertiseIntro": {
+              "type": "string"
+            },
+            "demoNotice": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "role",
+            "introOne",
+            "introTwo",
+            "introThree",
+            "letsTalk",
+            "openNotes",
+            "workHeading",
+            "workAside",
+            "writingHeading",
+            "writingIntro",
+            "allWriting",
+            "shelfHint",
+            "aboutHeading",
+            "aboutOne",
+            "aboutTwo",
+            "linkedinHistory",
+            "contactHeading",
+            "contactCopy",
+            "footerNote",
+            "rotateHint",
+            "readArticle",
+            "notePortrait",
+            "noteType",
+            "noteWork",
+            "noteShelf",
+            "noteContact",
+            "experienceHeading",
+            "experienceAside",
+            "experienceIntro",
+            "expertiseHeading",
+            "expertiseIntro",
+            "demoNotice"
+          ]
         }
       },
       "required": [
         "en",
-        "id"
+        "id",
+        "zh"
       ]
     },
     "projects": {
@@ -471,6 +607,10 @@
               "type": "string"
             }
           },
+          "url": {
+            "type": "string",
+            "description": "Optional https:// link to the published article. When set, no local page is built and body may be omitted."
+          },
           "body": {
             "type": "array",
             "items": {
@@ -488,8 +628,7 @@
           "readTime",
           "coverColor",
           "image",
-          "description",
-          "body"
+          "description"
         ]
       },
       "minItems": 1
@@ -527,6 +666,21 @@
             "type": "string"
           },
           "summary": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "highlights": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "stack": {
             "type": "array",
             "items": {
               "type": "string"

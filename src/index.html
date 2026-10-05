@@ -56,6 +56,7 @@
               <div class="menu-divider" role="separator"></div>
               <button type="button" role="menuitemradio" aria-checked="false" data-locale="en" lang="en"><span>English</span><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#check"></use></svg></button>
               <button type="button" role="menuitemradio" aria-checked="false" data-locale="id" lang="id"><span>Bahasa Indonesia</span><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#check"></use></svg></button>
+              <button type="button" role="menuitemradio" aria-checked="false" data-locale="zh" lang="zh-Hans"><span>简体中文</span><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#check"></use></svg></button>
             </div>
           </div>
           <span class="control-divider" aria-hidden="true"></span>
@@ -89,13 +90,6 @@
         <button class="notes-toggle" id="notes-toggle" type="button" aria-pressed="false"><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#viewfinder-circle"></use></svg><span data-copy="openNotes">{{copy.openNotes}}</span></button>
       </div>
     </header>
-    <section class="section annotated" id="work" aria-labelledby="work-title">
-      <div class="section-heading"><h2 id="work-title" data-copy="workHeading">{{copy.workHeading}}</h2><span class="section-aside" data-copy="workAside">{{copy.workAside}}</span></div>
-      <span class="margin-note note-left" data-copy="noteWork" aria-hidden="true">{{copy.noteWork}}</span>
-      <div class="work-list">
-{{projects}}
-      </div>
-    </section>
     <section class="section writing-section annotated" id="writing" aria-labelledby="writing-title">
       <div class="section-heading"><h2 id="writing-title" data-copy="writingHeading">{{copy.writingHeading}}</h2><a class="section-aside" href="{{profile.writingUrl}}" target="_blank" rel="noreferrer" data-copy="allWriting">{{copy.allWriting}}</a></div>
       <p class="section-intro" data-copy="writingIntro">{{copy.writingIntro}}</p>

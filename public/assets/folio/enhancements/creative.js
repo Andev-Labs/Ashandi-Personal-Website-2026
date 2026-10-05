@@ -48,14 +48,17 @@ export function setupCreativeMode() {
     const style = getComputedStyle(paragraph);
     const size = Math.round(parseFloat(style.fontSize) * 10) / 10;
     const leading = Math.round(parseFloat(style.lineHeight) * 10) / 10;
-    const indonesian = root.lang === 'id';
-    typeNote.lang = indonesian ? 'id' : 'en';
+    const strings = {
+      en: ['02 / Room to read', `${size}px type, ${leading}px line height. One column for comfortable reading.`],
+      id: ['02 / Ruang untuk membaca', `Teks ${size}px, tinggi baris ${leading}px. Satu kolom agar nyaman dibaca.`],
+      zh: ['02 / 阅读的空间', `字号 ${size}px,行高 ${leading}px。单栏排版,阅读更舒适。`],
+    };
+    const locale = strings[root.lang] ? root.lang : 'en';
+    typeNote.lang = locale;
     typeNote.replaceChildren();
     const title = document.createElement('b');
-    title.textContent = indonesian ? '02 / Ruang untuk membaca' : '02 / Room to read';
-    typeNote.append(title, indonesian
-      ? `Teks ${size}px, tinggi baris ${leading}px. Satu kolom agar nyaman dibaca.`
-      : `${size}px type, ${leading}px line height. One column for comfortable reading.`);
+    title.textContent = strings[locale][0];
+    typeNote.append(title, strings[locale][1]);
   }
   const noteEntrances = new Map();
   function finishNoteEntrances() {

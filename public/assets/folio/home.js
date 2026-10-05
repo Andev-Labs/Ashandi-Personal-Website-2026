@@ -7,8 +7,9 @@
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
   const site = window.portfolioData;
-  const supportedLanguages = ['en', 'id'];
-  const languageNames = {en:'English',id:'Bahasa Indonesia',es:'Español',fr:'Français',de:'Deutsch',ja:'日本語'};
+  // Same order as `locales` in scripts/validate.mjs; translated content arrays are indexed by it.
+  const supportedLanguages = ['en', 'id', 'zh'];
+  const languageNames = {en:'English',id:'Bahasa Indonesia',zh:'简体中文'};
   const localePacks = window.portfolioLocales || {};
   const detectLanguage = () => {
     for (const locale of navigator.languages || [navigator.language]) {
@@ -23,10 +24,11 @@
 
   // Copy belongs to this page. Translations never come from remote content.
   const english = Object.fromEntries([...document.querySelectorAll('[data-copy]')].map(node => [node.dataset.copy, node.innerHTML]));
-  const indonesian = localePacks.id.copy;
+  const localeTag = {en:'en-GB', zh:'zh-CN'};
   const defaultUi = {
     en:{themeLight:'Switch to light mode',themeDark:'Switch to dark mode',language:'Language',automatic:'Automatic',browserLanguage:'Browser language',previousArticle:'Previous article',nextArticle:'Next article',rotateLeft:'Rotate cover left',rotateRight:'Rotate cover right',previewArticle:'Preview article:',previewTag:'Take a closer look {arrow}',minutesRead:'min read'},
-    id:{themeLight:'Ganti ke tema terang',themeDark:'Ganti ke tema gelap',language:'Bahasa',automatic:'Otomatis',browserLanguage:'Bahasa browser',previousArticle:'Artikel sebelumnya',nextArticle:'Artikel berikutnya',rotateLeft:'Putar cover ke kiri',rotateRight:'Putar cover ke kanan',previewArticle:'Lihat artikel:',previewTag:'Lihat lebih dekat {arrow}',minutesRead:'menit baca'}
+    id:{themeLight:'Ganti ke tema terang',themeDark:'Ganti ke tema gelap',language:'Bahasa',automatic:'Otomatis',browserLanguage:'Bahasa browser',previousArticle:'Artikel sebelumnya',nextArticle:'Artikel berikutnya',rotateLeft:'Putar cover ke kiri',rotateRight:'Putar cover ke kanan',previewArticle:'Lihat artikel:',previewTag:'Lihat lebih dekat {arrow}',minutesRead:'menit baca'},
+    zh:{themeLight:'切换到浅色模式',themeDark:'切换到深色模式',language:'语言',automatic:'自动',browserLanguage:'浏览器语言',previousArticle:'上一篇文章',nextArticle:'下一篇文章',rotateLeft:'向左旋转封面',rotateRight:'向右旋转封面',previewArticle:'预览文章:',previewTag:'凑近看看 {arrow}',minutesRead:'分钟阅读'}
   };
   const uiCopy = () => localePacks[language]?.ui || defaultUi[language] || defaultUi.en;
   const renderCopy = copy => copy.replace(/\{arrow\}/g, '↗');
@@ -37,7 +39,7 @@
   let pinnedCover = null;
   let inspectionRotation = { x: -4, y: -24 };
   let restoreFocus = null;
-  const langIndex = () => language === 'id' ? 1 : 0;
+  const langIndex = () => Math.max(0, supportedLanguages.indexOf(language));
   const syncTheme = () => {
     const dark = root.dataset.theme === 'dark';
     $('theme-toggle').setAttribute('aria-pressed', String(dark));
@@ -217,7 +219,7 @@
   loadPortraitTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
   const bookDescription = book => book.description[langIndex()] || book.description[0];
   const bookCategory = book => book.category[langIndex()] || book.category[0];
-  const articleDate = book => new Intl.DateTimeFormat(language === 'en' ? 'en-GB' : language, { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(book.date + 'T12:00:00Z'));
+  const articleDate = book => new Intl.DateTimeFormat(localeTag[language] || language, { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(book.date + 'T12:00:00Z'));
 
   function makeBook(book, index, inspecting = false) {
     const object = document.createElement('div');
@@ -260,7 +262,7 @@
     $('dialog-category').textContent = bookCategory(book);
     $('dialog-description').textContent = bookDescription(book);
     $('dialog-read').href = book.url;
-    $('dialog-byline').textContent = site.profile.name + ' · ' + articleDate(book) + ' · ' + book.readTime + (language === 'ja' ? '' : ' ') + uiCopy().minutesRead;
+    $('dialog-byline').textContent = site.profile.name + ' · ' + articleDate(book) + ' · ' + book.readTime + (language === 'zh' ? '' : ' ') + uiCopy().minutesRead;
     $('inspection-book').replaceChildren(makeBook(book, selected, true));
   }
   function rotateInspection() {
@@ -455,7 +457,7 @@
   function setLanguage(next) {
     language = supportedLanguages.includes(next) ? next : 'en';
     root.lang = language;
-    const copy = localePacks[language]?.copy || (language === 'id' ? indonesian : english);
+    const copy = localePacks[language]?.copy || english;
     document.querySelectorAll('[data-copy]').forEach(node => {
       const content = renderCopy(copy[node.dataset.copy] ?? english[node.dataset.copy]);
       // Keep already-rendered copy in place on the initial English load.

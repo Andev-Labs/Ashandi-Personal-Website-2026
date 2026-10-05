@@ -2,6 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+// Order matters: translated arrays in content/site.json follow this order.
+export const locales = ['en','id','zh'];
+
 export function validate(site) {
   const fail = (key, message) => { throw new Error(`content/site.json → ${key}: ${message}`); };
   const text = (value,key) => { if (typeof value !== 'string' || !value.trim()) fail(key,'must be a non-empty string'); };
@@ -38,7 +41,7 @@ export function validate(site) {
   url(site.meta.image,'meta.image');
   if (!/^\/assets\/.+\.(png|jpe?g|webp)$/i.test(site.meta.image)) fail('meta.image','use a local PNG, JPEG, or WebP (1200 × 630 recommended)');
   const requiredCopy = ['role','introOne','introTwo','introThree','letsTalk','openNotes','workHeading','workAside','writingHeading','writingIntro','allWriting','shelfHint','aboutHeading','aboutOne','aboutTwo','linkedinHistory','contactHeading','contactCopy','footerNote','rotateHint','readArticle','notePortrait','noteType','noteWork','noteShelf','noteContact'];
-  for (const locale of ['en','id']) {
+  for (const locale of locales) {
     if (!site.copy[locale]) fail(`copy.${locale}`,'is required');
     for (const key of requiredCopy) text(site.copy[locale][key],`copy.${locale}.${key}`);
     for (const [key,value] of Object.entries(site.copy[locale])) {
@@ -47,7 +50,7 @@ export function validate(site) {
     }
   }
   for (const group of ['projects','articles','socials','experience','expertise']) if (!Array.isArray(site[group])) fail(group,'must be an array');
-  for (const key of ['demoNotice','experienceHeading','experienceAside','experienceIntro','expertiseHeading','expertiseIntro']) for (const locale of ['en','id']) text(site.copy[locale][key],`copy.${locale}.${key}`);
+  for (const key of ['demoNotice','experienceHeading','experienceAside','experienceIntro','expertiseHeading','expertiseIntro']) for (const locale of locales) text(site.copy[locale][key],`copy.${locale}.${key}`);
   if (!site.articles.length) fail('articles','keep at least one article for the interactive bookshelf');
   for (const group of ['projects','articles']) {
     const seen = new Set();
@@ -59,6 +62,7 @@ export function validate(site) {
       seen.add(item.slug);
       text(item.title,`${key}.title`);
       for (const prop of ['description','body']) {
+        if (prop === 'body' && group === 'articles' && item.url !== undefined) continue;
         if (!Array.isArray(item[prop]) || !item[prop].length) fail(`${key}.${prop}`,'must be a non-empty array of text');
         item[prop].forEach((value,j) => text(value,`${key}.${prop}[${j}]`));
       }
@@ -78,6 +82,7 @@ export function validate(site) {
         if (!/^#[a-f\d]{6}$/i.test(item.coverColor)) fail(`${key}.coverColor`,'use a six-digit hex color');
         url(item.image,`${key}.image`);
         if (!item.image.startsWith('/assets/')) fail(`${key}.image`,'must be a local /assets/ image');
+        if (item.url !== undefined && !/^https:\/\//.test(item.url)) fail(`${key}.url`,'must be an absolute https:// URL to the published article');
       }
     });
   }
@@ -87,6 +92,17 @@ export function validate(site) {
     for (const key of ['role','period','location']) text(item[key],`experience[${i}].${key}`);
     if(!Array.isArray(item.summary)||!item.summary.length) fail(`experience[${i}].summary`,'must be a list of translated summaries');
     item.summary.forEach((value,j)=>text(value,`experience[${i}].summary[${j}]`));
+    if (item.highlights !== undefined) {
+      if (!Array.isArray(item.highlights) || !item.highlights.length) fail(`experience[${i}].highlights`,'must be a non-empty list of translated highlights');
+      item.highlights.forEach((highlight,j)=>{
+        if (!Array.isArray(highlight) || !highlight.length) fail(`experience[${i}].highlights[${j}]`,`must be a list of translations in ${locales.join(', ')} order`);
+        highlight.forEach((value,k)=>text(value,`experience[${i}].highlights[${j}][${k}]`));
+      });
+    }
+    if (item.stack !== undefined) {
+      if (!Array.isArray(item.stack) || !item.stack.length) fail(`experience[${i}].stack`,'must be a non-empty list of tools');
+      item.stack.forEach((value,j)=>text(value,`experience[${i}].stack[${j}]`));
+    }
   });
   site.expertise.forEach((item,i)=>{
     for (const key of ['title','description']) {

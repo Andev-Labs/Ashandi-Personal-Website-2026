@@ -19,7 +19,8 @@
     place.after(status);
     const update = () => {
       status.hidden = navigator.onLine !== false;
-      status.textContent = status.hidden ? '' : document.documentElement.lang === 'id' ? 'Offline · tautan eksternal mungkin tidak tersedia' : 'Offline · external links may be unavailable';
+      const messages = { en: 'Offline · external links may be unavailable', id: 'Offline · tautan eksternal mungkin tidak tersedia', zh: '离线 · 外部链接可能无法访问' };
+      status.textContent = status.hidden ? '' : messages[document.documentElement.lang] || messages.en;
     };
     addEventListener('offline', update);
     addEventListener('online', update);

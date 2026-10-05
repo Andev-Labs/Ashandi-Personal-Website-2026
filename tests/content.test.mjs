@@ -32,14 +32,18 @@ test('one profile edit reaches rendered HTML, metadata, and runtime content',()=
 test('GitHub Pages subdirectory reaches HTML, CSS, runtime links and sitemap',()=>{
   const outDir=fs.mkdtempSync(path.join(os.tmpdir(),'portfolio-base-'));
   try {
-    build({site:original,outDir,siteUrl:'https://someone.github.io/portfolio/'});
+    const site=structuredClone(original);
+    site.articles.push({...site.articles[0],slug:'local-note',url:undefined,body:['A note hosted on this site.']});
+    build({site,outDir,siteUrl:'https://someone.github.io/portfolio/'});
     const html=fs.readFileSync(path.join(outDir,'index.html'),'utf8');
     assert.match(html,/href="\/portfolio\/assets\/folio\/home.css"/);
-    assert.match(html,/href="\/portfolio\/work\/shopbot-assistant\/"/);
+    assert.match(html,/href="\/portfolio\/writing\/local-note\/"/);
     assert.match(fs.readFileSync(path.join(outDir,'assets/folio/home.css'),'utf8'),/\/portfolio\/assets\/fonts\//);
     const context={window:{}};
     vm.runInNewContext(fs.readFileSync(path.join(outDir,'assets/site-data.js'),'utf8'),context);
-    assert.equal(context.window.portfolioData.articles[0].url,'/portfolio/writing/offline-first-field-apps/');
+    assert.equal(context.window.portfolioData.articles[0].url,site.articles[0].url,'external articles keep their published URL');
+    assert.equal(context.window.portfolioData.articles[1].url,'/portfolio/writing/local-note/');
+    assert.ok(!fs.existsSync(path.join(outDir,'writing',site.articles[0].slug)),'external articles get no local page');
     assert.match(fs.readFileSync(path.join(outDir,'sitemap.xml'),'utf8'),/https:\/\/someone.github.io\/portfolio\/writing\//);
     const vendor='assets/folio/enhancements/vendor/text-split.js';
     assert.equal(fs.readFileSync(path.join(outDir,vendor),'utf8'),fs.readFileSync(path.join(root,'public',vendor),'utf8'),'subdirectory deployment must preserve upstream regex literals');
@@ -53,6 +57,9 @@ test('unsafe URLs, duplicate slugs, missing translations, and invalid dates have
     [s=>s.projects[1].slug=s.projects[0].slug,/must be unique/],
     [s=>s.articles[0].slug='../escape',/slug/],
     [s=>s.articles[0].date='2026-02-30',/real YYYY-MM-DD/],
+    [s=>s.articles[0].url='http://medium.com/@someone/post',/articles\[0\].url/],
+    [s=>{delete s.articles[0].url; delete s.articles[0].body;},/articles\[0\].body/],
+    [s=>s.experience[0].highlights=[[]],/experience\[0\].highlights\[0\]/],
     [s=>delete s.copy.id.introOne,/copy.id.introOne/],
     [s=>s.articles=[],/at least one article/],
     [s=>s.profile.timezone='Moon/Sea',/IANA timezone/],

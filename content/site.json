@@ -10,7 +10,7 @@
     "portrait": "/assets/images/portrait.webp",
     "portraitMode": "image",
     "experienceUrl": "https://linkedin.com/in/ashandi-leonadi",
-    "writingUrl": "/writing/"
+    "writingUrl": "https://medium.com/@ashandileonadi"
   },
   "meta": {
     "url": "https://ashandileonadi.vercel.app/",
@@ -19,21 +19,21 @@
   },
   "copy": {
     "en": {
-      "readArticle": "Read the note ↗",
+      "readArticle": "Read on Medium ↗",
       "rotateHint": "Drag to turn",
       "footerNote": "From data model to interface.",
       "contactCopy": "If you're building a product and care about how it holds up in real use, I'd love to hear about it.",
       "contactHeading": "Have something in mind?",
       "noteContact": "05 / It starts here\nA good product starts with a conversation.",
       "linkedinHistory": "More on LinkedIn ↗",
-      "aboutTwo": "Since then I've moved closer to the whole product: OpenAI-powered PDF reports, offline-first sync on TanStack DB and GPS telemetry on DynamoDB at MapTrack, and now security remediation and commerce flows for Sampoerna and Teazzi at Zero One Group. I hold a Bachelor of Computer Science from Binus Online Learning (GPA 3.69).",
-      "aboutOne": "I started as a frontend intern at Happy5 in 2020, building PDF exports and end-to-end tests, then stayed on to ship React and React Native apps, lead code reviews, mentor interns, and build a shared component library in Storybook.",
-      "aboutHeading": "A little background",
+      "aboutTwo": "I also build what helps a team ship faster and break less: shared component libraries, end-to-end tests, TypeScript migrations done without pausing feature work, and code reviews and mentoring that got new engineers productive sooner. I grew the same way, from intern at Happy5 in 2020 to fullstack product engineer. Bachelor of Computer Science, Binus Online Learning (GPA 3.69).",
+      "aboutOne": "I care less about which stack a feature uses and more about what changes once it ships. So I own the work end to end, from the data model to the screen, and stay with it until it holds up in real use: field crews at MapTrack who keep working when signal drops, and HR teams at Happy5 who stopped compiling performance reviews by hand.",
+      "aboutHeading": "How I work",
       "shelfHint": "Pick a cover to take a closer look.",
-      "noteShelf": "04 / A closer look\nPick up a cover, turn it around, or read the note.",
-      "writingIntro": "Short notes on problems I've worked through in production.",
-      "allWriting": "All notes ↗",
-      "writingHeading": "Notes",
+      "noteShelf": "04 / A closer look\nPick up a cover, turn it around, or read the article.",
+      "writingIntro": "Selected articles published on Medium.",
+      "allWriting": "All articles ↗",
+      "writingHeading": "Writing",
       "loadingRole": "Design & development",
       "loadingDetail": "A playground for loading states and interface feedback.",
       "noteWork": "03 / Side projects\nIndependent products, from idea to deployment.",
@@ -49,7 +49,7 @@
       "notePortrait": "01 / Hello\nAshandi, based in Jakarta.",
       "experienceHeading": "Where I've worked",
       "experienceAside": "2020 — Present",
-      "experienceIntro": "Five years shipping web and mobile products, full-time and freelance.",
+      "experienceIntro": "Five years shipping production web and mobile apps across HR, fleet tracking, education, and commerce, growing from intern to fullstack product engineer.",
       "expertiseHeading": "What I bring to a team",
       "expertiseIntro": "From the data model to the last pixel of the interface.",
       "demoNotice": "Independent project by Ashandi Leonadi."
@@ -63,30 +63,66 @@
       "openNotes": "Di balik desain",
       "workHeading": "Dibuat untuk dipakai",
       "workAside": "Karya independen",
-      "writingHeading": "Catatan",
-      "writingIntro": "Catatan singkat tentang masalah yang pernah saya selesaikan di production.",
-      "allWriting": "Semua catatan ↗",
+      "writingHeading": "Tulisan",
+      "writingIntro": "Artikel pilihan yang terbit di Medium.",
+      "allWriting": "Semua artikel ↗",
       "shelfHint": "Pilih cover untuk melihat lebih dekat.",
-      "aboutHeading": "Sedikit latar belakang",
-      "aboutOne": "Saya mulai sebagai frontend intern di Happy5 pada 2020, membuat ekspor PDF dan end-to-end test, lalu lanjut membangun aplikasi React dan React Native, memimpin code review, membimbing intern, dan membuat component library di Storybook.",
-      "aboutTwo": "Sejak itu saya semakin dekat ke produk secara utuh: laporan PDF berbasis OpenAI, sinkronisasi offline-first dengan TanStack DB dan telemetri GPS di DynamoDB di MapTrack, dan kini perbaikan keamanan serta alur commerce untuk Sampoerna dan Teazzi di Zero One Group. Lulusan S1 Ilmu Komputer Binus Online Learning (IPK 3.69).",
+      "aboutHeading": "Cara saya bekerja",
+      "aboutOne": "Bagi saya, yang penting bukan stack apa yang dipakai, tapi apa yang berubah setelah fitur dirilis. Karena itu saya memegang pekerjaan dari ujung ke ujung, dari model data sampai layar, dan mengawalnya sampai benar-benar teruji saat dipakai: kru lapangan MapTrack yang tetap bisa bekerja saat sinyal hilang, dan tim HR di Happy5 yang tidak lagi menyusun hasil review kinerja secara manual.",
+      "aboutTwo": "Saya juga membangun hal-hal yang membuat tim merilis lebih cepat dan lebih jarang rusak: component library bersama, end-to-end test, migrasi ke TypeScript tanpa menghentikan pengembangan fitur, serta code review dan mentoring yang membuat engineer baru lebih cepat produktif. Saya sendiri tumbuh dengan cara itu, dari intern di Happy5 pada 2020 sampai menjadi fullstack product engineer. Lulusan S1 Ilmu Komputer Binus Online Learning (IPK 3.69).",
       "linkedinHistory": "Selengkapnya di LinkedIn ↗",
       "contactHeading": "Punya sesuatu yang ingin dibangun?",
       "contactCopy": "Kalau kamu sedang membangun produk dan peduli bagaimana produk itu bertahan saat dipakai, saya senang mendengarnya.",
       "footerNote": "Dari model data sampai antarmuka.",
       "rotateHint": "Geser untuk memutar",
-      "readArticle": "Baca catatannya ↗",
+      "readArticle": "Baca di Medium ↗",
       "notePortrait": "01 / Halo\nAshandi, berbasis di Jakarta.",
       "noteType": "02 / Ruang untuk membaca\nKolom yang tenang. Ruang untuk karya berbicara.",
       "noteWork": "03 / Proyek sampingan\nProduk independen, dari ide sampai rilis.",
-      "noteShelf": "04 / Lihat lebih dekat\nAmbil cover, putar, atau baca catatannya.",
+      "noteShelf": "04 / Lihat lebih dekat\nAmbil cover, putar, atau baca artikelnya.",
       "noteContact": "05 / Mulai di sini\nProduk yang baik dimulai dari percakapan.",
       "experienceHeading": "Tempat saya bekerja",
       "experienceAside": "2020 — Sekarang",
-      "experienceIntro": "Lima tahun membangun produk web dan mobile, full-time maupun freelance.",
+      "experienceIntro": "Lima tahun membangun aplikasi web dan mobile production di bidang HR, pelacakan armada, edukasi, dan commerce, dari intern hingga fullstack product engineer.",
       "expertiseHeading": "Yang saya bawa ke dalam tim",
       "expertiseIntro": "Dari model data sampai piksel terakhir di antarmuka.",
       "demoNotice": "Proyek independen oleh Ashandi Leonadi."
+    },
+    "zh": {
+      "role": "软件产品工程师，从数据模型到界面。",
+      "introOne": "我开发运行在生产环境中的 Web 和移动产品，负责一个功能从数据模型到人们每天使用的界面的全过程。",
+      "introTwo": "目前就职于 {company:zeroone}。此前在 {company:maptrack} 开发 AI 辅助报告和离线优先的外勤应用，并在 {company:happy5} 从事了五年 Web 和移动开发。",
+      "introThree": "前端使用 Next.js 和 TypeScript，后端使用 Supabase、Laravel 和 DynamoDB，在真正有价值的地方使用 OpenAI 和检索增强生成（RAG)。",
+      "letsTalk": "聊一聊 ↗",
+      "openNotes": "设计背后",
+      "workHeading": "为使用而打造",
+      "workAside": "独立作品",
+      "writingHeading": "文章",
+      "writingIntro": "发布在 Medium 上的精选文章。",
+      "allWriting": "全部文章 ↗",
+      "shelfHint": "选一本封面，凑近看看。",
+      "aboutHeading": "我的工作方式",
+      "aboutOne": "比起一个功能用了什么技术栈，我更在意它上线后改变了什么。所以我从数据模型到界面全程负责，并一直跟进到它经得起真实使用：比如 MapTrack 的外勤团队在信号中断时仍能继续工作，Happy5 的 HR 团队不再需要手动整理绩效评估结果。",
+      "aboutTwo": "我也打造让团队交付更快、出错更少的基础：共享组件库、端到端测试、不暂停功能开发的 TypeScript 迁移，以及让新工程师更快上手的代码评审和指导。我自己也是这样成长的，从 2020 年 Happy5 的实习生成长为全栈产品工程师。毕业于 Binus Online Learning，计算机科学学士（GPA 3.69)。",
+      "linkedinHistory": "在 LinkedIn 查看更多 ↗",
+      "contactHeading": "有想法要实现吗？",
+      "contactCopy": "如果你正在打造一款产品，并且在意它在真实使用中是否经得起考验，我很乐意听听。",
+      "footerNote": "从数据模型到界面。",
+      "rotateHint": "拖动旋转",
+      "readArticle": "在 Medium 上阅读 ↗",
+      "notePortrait": "01 / 你好\n我是 Ashandi，常驻雅加达。",
+      "noteType": "02 / 阅读的空间\n安静的单栏排版，让作品自己说话。",
+      "noteWork": "03 / 业余项目\n从想法到上线的独立产品。",
+      "noteShelf": "04 / 凑近看看\n拿起封面，转一转，或者读读文章。",
+      "noteContact": "05 / 从这里开始\n好的产品始于一次对话。",
+      "loadingRole": "设计与开发",
+      "loadingDetail": "用来试验加载状态和界面反馈的地方。",
+      "experienceHeading": "工作经历",
+      "experienceAside": "2020 — 至今",
+      "experienceIntro": "五年来在 HR、车队追踪、教育和电商领域开发生产环境的 Web 和移动应用，从实习生成长为全栈产品工程师。",
+      "expertiseHeading": "我能为团队带来什么",
+      "expertiseIntro": "从数据模型到界面的最后一个像素。",
+      "demoNotice": "Ashandi Leonadi 的独立项目。"
     }
   },
   "projects": [
@@ -159,66 +195,24 @@
   ],
   "articles": [
     {
-      "slug": "offline-first-field-apps",
-      "title": "Offline-first field apps",
-      "short": "Offline-first field apps",
+      "slug": "vibe-coding-usesyncexternalstore",
+      "title": "I Was Vibe Coding an Auth Feature and Ended Up Learning useSyncExternalStore",
+      "short": "Learning useSyncExternalStore",
       "category": [
-        "Engineering",
-        "Engineering"
+        "React",
+        "React",
+        "React"
       ],
-      "publication": "Notes",
-      "date": "2026-03-01",
-      "readTime": 2,
-      "coverColor": "#e5e1d5",
-      "image": "/assets/images/notes/offline-first-field-apps.svg",
+      "publication": "Medium",
+      "date": "2026-10-04",
+      "readTime": 6,
+      "coverColor": "#f3efe6",
+      "image": "/assets/images/notes/vibe-coding-usesyncexternalstore.svg",
+      "url": "https://medium.com/@ashandileonadi/i-was-vibe-coding-an-auth-feature-and-ended-up-learning-usesyncexternalstore-c04346929568",
       "description": [
-        "Keeping field crews recording in low-signal areas.",
-        "Membuat kru lapangan tetap bisa mencatat di area sinyal lemah."
-      ],
-      "body": [
-        "At MapTrack, field crews work where signal drops out. Rebuilding the data layer on TanStack DB made the app offline first: crews keep recording, and changes sync automatically once connectivity returns."
-      ]
-    },
-    {
-      "slug": "ai-generated-reports",
-      "title": "From form definitions to print-ready reports",
-      "short": "From form definitions to print-ready reports",
-      "category": [
-        "AI",
-        "AI"
-      ],
-      "publication": "Notes",
-      "date": "2025-11-01",
-      "readTime": 2,
-      "coverColor": "#d4ddcf",
-      "image": "/assets/images/notes/ai-generated-reports.svg",
-      "description": [
-        "Replacing a manual report step with OpenAI.",
-        "Mengganti langkah laporan manual dengan OpenAI."
-      ],
-      "body": [
-        "Field teams used to prepare reports by hand. An OpenAI-powered PDF generation system now turns custom form definitions into structured, print-ready reports."
-      ]
-    },
-    {
-      "slug": "typescript-without-pausing",
-      "title": "Migrating to TypeScript without pausing delivery",
-      "short": "Migrating to TypeScript without pausing delivery",
-      "category": [
-        "Frontend",
-        "Frontend"
-      ],
-      "publication": "Notes",
-      "date": "2024-06-01",
-      "readTime": 2,
-      "coverColor": "#dde3ec",
-      "image": "/assets/images/notes/typescript-without-pausing.svg",
-      "description": [
-        "Incremental migration over a big-bang rewrite.",
-        "Migrasi bertahap, bukan rewrite sekaligus."
-      ],
-      "body": [
-        "At Happy5 and Kodegiri, legacy JavaScript moved to TypeScript module by module, so type safety landed across the product while features kept shipping."
+        "A React hook I’d never used, a small re-render experiment, and the question of whether we still need Zustand or Redux.",
+        "Hook React yang belum pernah saya pakai, eksperimen kecil soal re-render, dan pertanyaan apakah kita masih butuh Zustand atau Redux.",
+        "一个我从没用过的 React Hook、一个关于重新渲染的小实验，以及我们是否还需要 Zustand 或 Redux 的问题。"
       ]
     }
   ],
@@ -230,10 +224,6 @@
     {
       "label": "LinkedIn",
       "url": "https://linkedin.com/in/ashandi-leonadi"
-    },
-    {
-      "label": "Website",
-      "url": "https://ashandileonadi.vercel.app"
     }
   ],
   "experience": [
@@ -242,8 +232,28 @@
       "period": "Jun 2026 — Present",
       "location": "Jakarta · Full-time",
       "summary": [
-        "Security remediation across Sampoerna apps, plus the Teazzi back office and customer ordering flows.",
-        "Perbaikan keamanan di aplikasi Sampoerna, serta back office dan alur pemesanan pelanggan Teazzi."
+        "Keeping enterprise apps safe for their users while opening new sales channels for a growing brand.",
+        "Menjaga aplikasi enterprise tetap aman bagi penggunanya sambil membuka kanal penjualan baru untuk brand yang sedang tumbuh.",
+        "在保障企业应用用户安全的同时，为成长中的品牌开辟新的销售渠道。"
+      ],
+      "highlights": [
+        [
+          "Closed security vulnerabilities in Sampoerna apps already in production, reducing risk for the people using them every day.",
+          "Menutup celah keamanan di aplikasi Sampoerna yang sudah berjalan di production, mengurangi risiko bagi orang yang memakainya setiap hari.",
+          "修复了 Sampoerna 线上应用的安全漏洞，降低了每天使用它的人们所面临的风险。"
+        ],
+        [
+          "Gave Teazzi a way to take orders directly and run operations from one back office, from what customers tap through to what the team manages.",
+          "Memberi Teazzi cara menerima pesanan langsung dan menjalankan operasional dari satu back office, dari alur yang dilalui pelanggan sampai yang dikelola tim.",
+          "让 Teazzi 能够直接接单，并在一个后台中管理运营，从顾客点击的流程到团队管理的界面。"
+        ]
+      ],
+      "stack": [
+        "Angular",
+        "React",
+        "React Native",
+        "TypeScript",
+        "Go"
       ],
       "companyId": "zeroone"
     },
@@ -252,8 +262,39 @@
       "period": "Oct 2024 — May 2026",
       "location": "Remote · Freelance",
       "summary": [
-        "OpenAI-powered PDF reports, offline-first sync on TanStack DB, GPS telemetry on DynamoDB, and an interactive asset map.",
-        "Laporan PDF berbasis OpenAI, sinkronisasi offline-first dengan TanStack DB, telemetri GPS di DynamoDB, dan peta aset interaktif."
+        "Helping field teams track assets and file reports without paperwork or reliable signal.",
+        "Membantu tim lapangan melacak aset dan membuat laporan tanpa kertas dan tanpa bergantung pada sinyal.",
+        "帮助外勤团队在没有纸质文件、也不依赖稳定信号的情况下追踪资产、提交报告。"
+      ],
+      "highlights": [
+        [
+          "Removed manual report preparation: field teams now get structured, print-ready PDFs generated with OpenAI straight from their custom forms.",
+          "Menghapus penyusunan laporan manual: tim lapangan kini langsung mendapat PDF terstruktur siap cetak yang dibuat dengan OpenAI dari form kustom mereka.",
+          "省去了手动整理报告：外勤团队现在可以直接从自定义表单获得由 OpenAI 生成、可直接打印的结构化 PDF。"
+        ],
+        [
+          "Crews no longer lose work when signal drops: an offline-first data layer on TanStack DB keeps them recording and syncs once they reconnect.",
+          "Kru tidak lagi kehilangan pekerjaan saat sinyal hilang: data layer offline-first dengan TanStack DB membuat mereka tetap bisa mencatat dan sinkron otomatis saat tersambung lagi.",
+          "信号中断时工作不再丢失：基于 TanStack DB 的离线优先数据层让他们继续记录，并在重新联网后自动同步。"
+        ],
+        [
+          "Operators see low-battery and offline trackers in real time, with GPS battery and device status monitoring on DynamoDB.",
+          "Operator bisa melihat tracker yang baterainya lemah atau offline secara real-time, lewat monitoring baterai GPS dan status perangkat di DynamoDB.",
+          "运营人员可以实时看到低电量或离线的追踪器，依靠 DynamoDB 上的 GPS 电量和设备状态监控。"
+        ],
+        [
+          "Fleet managers find and inspect any asset from one map, with overlapping markers kept readable, filters, and a detail drawer.",
+          "Fleet manager bisa menemukan dan memeriksa aset mana pun dari satu peta, dengan marker bertumpuk yang tetap terbaca, filter, dan detail drawer.",
+          "车队经理可以在一张地图上找到并查看任何资产，重叠的标记依然清晰，并配有筛选和详情抽屉。"
+        ]
+      ],
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "OpenAI",
+        "TanStack DB",
+        "DynamoDB"
       ],
       "companyId": "maptrack"
     },
@@ -262,8 +303,27 @@
       "period": "Mar 2024 — Jun 2024",
       "location": "Remote · Freelance",
       "summary": [
-        "Revamped the VRMS web app and migrated it to TypeScript.",
-        "Merombak aplikasi web VRMS dan migrasi ke TypeScript."
+        "A short engagement that left the VRMS team with a modern product and a safer codebase.",
+        "Proyek singkat yang meninggalkan produk yang lebih modern dan codebase yang lebih aman untuk tim VRMS.",
+        "一次短期合作，为 VRMS 团队留下了更现代的产品和更安全的代码库。"
+      ],
+      "highlights": [
+        [
+          "Gave VRMS users a modernised interface and new features, built with React, Ant Design, and Tailwind CSS.",
+          "Memberi pengguna VRMS antarmuka yang lebih modern dan fitur baru, dibangun dengan React, Ant Design, dan Tailwind CSS.",
+          "使用 React、Ant Design 和 Tailwind CSS，为 VRMS 用户带来更现代的界面和新功能。"
+        ],
+        [
+          "Made future changes safer for the team by migrating the codebase from JavaScript to TypeScript.",
+          "Membuat perubahan ke depan lebih aman bagi tim dengan migrasi codebase dari JavaScript ke TypeScript.",
+          "将代码库从 JavaScript 迁移到 TypeScript，让团队今后的改动更安全。"
+        ]
+      ],
+      "stack": [
+        "React",
+        "TypeScript",
+        "Ant Design",
+        "Tailwind CSS"
       ],
       "companyId": "kodegiri"
     },
@@ -272,8 +332,26 @@
       "period": "Mar 2022 — Apr 2022",
       "location": "Remote · Freelance",
       "summary": [
-        "Production React components with React Query and Styled Components.",
-        "Komponen React production dengan React Query dan Styled Components."
+        "Turning designs into a fast, consistent learning experience for students.",
+        "Mengubah desain menjadi pengalaman belajar yang cepat dan konsisten bagi siswa.",
+        "把设计稿变成对学生来说快速且一致的学习体验。"
+      ],
+      "highlights": [
+        [
+          "Smoother pages for learners, with data fetching and caching handled through React Query.",
+          "Halaman lebih mulus bagi pelajar, dengan pengambilan dan cache data lewat React Query.",
+          "通过 React Query 处理数据获取和缓存，让学习者的页面更加流畅。"
+        ],
+        [
+          "One consistent look across the product, with shared Styled Components theming that is easy to extend.",
+          "Tampilan yang konsisten di seluruh produk, dengan theming Styled Components bersama yang mudah dikembangkan.",
+          "借助易于扩展的共享 Styled Components 主题，让整个产品保持一致的外观。"
+        ]
+      ],
+      "stack": [
+        "React",
+        "React Query",
+        "Styled Components"
       ],
       "companyId": "rakamin"
     },
@@ -282,8 +360,26 @@
       "period": "Jul 2021 — Feb 2022",
       "location": "Remote · Freelance",
       "summary": [
-        "Rebuilt legacy pages in Next.js and created shared API utilities.",
-        "Membangun ulang halaman lama dengan Next.js dan membuat utilitas API bersama."
+        "Bringing a school platform's legacy pages up to modern standards for teachers and students.",
+        "Membawa halaman lama platform sekolah ke standar modern untuk guru dan siswa.",
+        "为教师和学生，把学校平台的旧页面提升到现代标准。"
+      ],
+      "highlights": [
+        [
+          "Faster, more usable pages for teachers and students by rebuilding legacy screens in Next.js and shipping new features.",
+          "Halaman yang lebih cepat dan nyaman bagi guru dan siswa dengan membangun ulang layar lama di Next.js dan menambah fitur baru.",
+          "用 Next.js 重建旧页面并推出新功能，让教师和学生的页面更快、更好用。"
+        ],
+        [
+          "Less duplicated code across the team through shared API utilities and regular code reviews.",
+          "Lebih sedikit kode duplikat di tim lewat utilitas API bersama dan code review rutin.",
+          "通过共享的 API 工具函数和定期代码评审，减少了团队中的重复代码。"
+        ]
+      ],
+      "stack": [
+        "Next.js",
+        "React",
+        "Bootstrap"
       ],
       "companyId": "smarteschool"
     },
@@ -292,8 +388,40 @@
       "period": "Mar 2021 — Dec 2025",
       "location": "Remote · Full-time",
       "summary": [
-        "Led code reviews, mentored interns, built a Storybook component library, Cypress E2E, and the Happy5 Culture app in React Native.",
-        "Memimpin code review, membimbing intern, membuat component library Storybook, E2E Cypress, dan aplikasi Happy5 Culture dengan React Native."
+        "Raised the frontend bar of an HR and performance platform used by many organisations, and helped the next engineers grow.",
+        "Menaikkan standar frontend platform HR dan performance management yang dipakai banyak organisasi, sekaligus membantu engineer berikutnya berkembang.",
+        "提升了一个被众多组织使用的 HR 与绩效管理平台的前端水准，并帮助后来的工程师成长。"
+      ],
+      "highlights": [
+        [
+          "New engineers got productive faster: I led frontend code reviews and mentored interns through onboarding.",
+          "Engineer baru lebih cepat produktif: saya memimpin code review frontend dan membimbing intern selama onboarding.",
+          "新工程师更快上手：我主导前端代码评审，并在入职期间指导实习生。"
+        ],
+        [
+          "Features shipped faster and broke less often, thanks to a shared Storybook component library and Cypress end-to-end tests.",
+          "Fitur rilis lebih cepat dan lebih jarang rusak, berkat component library Storybook bersama dan end-to-end test Cypress.",
+          "借助共享的 Storybook 组件库和 Cypress 端到端测试，功能交付更快，出错更少。"
+        ],
+        [
+          "Fewer runtime errors in production after migrating legacy JavaScript modules to TypeScript, without pausing feature work.",
+          "Lebih sedikit runtime error di production setelah migrasi modul JavaScript lama ke TypeScript, tanpa menghentikan pengembangan fitur.",
+          "在不暂停功能开发的情况下，把旧的 JavaScript 模块迁移到 TypeScript，减少了线上运行时错误。"
+        ],
+        [
+          "Brought company culture to employees' phones with the Happy5 Culture app in React Native, and gave the product team usage data through Amplitude.",
+          "Membawa budaya perusahaan ke ponsel karyawan lewat aplikasi Happy5 Culture dengan React Native, dan memberi tim produk data pemakaian lewat Amplitude.",
+          "通过 React Native 开发的 Happy5 Culture 应用，把企业文化带到员工手机上，并借助 Amplitude 为产品团队提供使用数据。"
+        ]
+      ],
+      "stack": [
+        "React",
+        "React Native",
+        "TypeScript",
+        "Tailwind CSS",
+        "Cypress",
+        "Storybook",
+        "Amplitude"
       ],
       "companyId": "happy5"
     },
@@ -302,8 +430,31 @@
       "period": "May 2020 — Mar 2021",
       "location": "Remote · Internship",
       "summary": [
-        "PDF export for performance reviews and Cypress end-to-end tests.",
-        "Ekspor PDF untuk review kinerja dan end-to-end test Cypress."
+        "Where it started: shipping HR features real companies used, as an intern.",
+        "Awal perjalanan: merilis fitur HR yang dipakai perusahaan sungguhan, sebagai intern.",
+        "起点：作为实习生，上线了真实企业在使用的 HR 功能。"
+      ],
+      "highlights": [
+        [
+          "HR teams could export formal performance review results as PDFs instead of compiling them by hand, built with @react-pdf/renderer.",
+          "Tim HR bisa mengekspor hasil review kinerja formal sebagai PDF, bukan menyusunnya manual, dibangun dengan @react-pdf/renderer.",
+          "使用 @react-pdf/renderer，让 HR 团队可以把正式绩效评估结果导出为 PDF，而不必手动整理。"
+        ],
+        [
+          "Fewer bugs reached customers: wrote Cypress end-to-end tests and fixed issues ahead of each release.",
+          "Lebih sedikit bug sampai ke pelanggan: menulis end-to-end test Cypress dan memperbaiki masalah sebelum setiap rilis.",
+          "减少了流向客户的缺陷：编写 Cypress 端到端测试，并在每次发布前修复问题。"
+        ],
+        [
+          "Wired frontend components to backend services so core HR features worked end to end.",
+          "Menghubungkan komponen frontend ke backend agar fitur inti HR berjalan dari awal sampai akhir.",
+          "把前端组件与后端服务打通，让核心 HR 功能端到端可用。"
+        ]
+      ],
+      "stack": [
+        "React",
+        "Cypress",
+        "@react-pdf/renderer"
       ],
       "companyId": "happy5"
     }
@@ -312,9 +463,11 @@
     {
       "title": [
         "Frontend",
-        "Frontend"
+        "Frontend",
+        "前端"
       ],
       "description": [
+        "React.js, Next.js, React Native, Angular, Tailwind CSS, Shadcn UI, React Hook Form, Zod.",
         "React.js, Next.js, React Native, Angular, Tailwind CSS, Shadcn UI, React Hook Form, Zod.",
         "React.js, Next.js, React Native, Angular, Tailwind CSS, Shadcn UI, React Hook Form, Zod."
       ]
@@ -322,29 +475,35 @@
     {
       "title": [
         "Backend and data",
-        "Backend dan data"
+        "Backend dan data",
+        "后端与数据"
       ],
       "description": [
         "Laravel, Inertia.js, Supabase, PostgreSQL, SQLite, DynamoDB, TanStack Query and DB.",
-        "Laravel, Inertia.js, Supabase, PostgreSQL, SQLite, DynamoDB, TanStack Query dan DB."
+        "Laravel, Inertia.js, Supabase, PostgreSQL, SQLite, DynamoDB, TanStack Query dan DB.",
+        "Laravel、Inertia.js、Supabase、PostgreSQL、SQLite、DynamoDB、TanStack Query 和 DB。"
       ]
     },
     {
       "title": [
         "AI",
+        "AI",
         "AI"
       ],
       "description": [
         "OpenAI API, Mistral AI, retrieval-augmented generation, vector search.",
-        "OpenAI API, Mistral AI, retrieval-augmented generation, vector search."
+        "OpenAI API, Mistral AI, retrieval-augmented generation, vector search.",
+        "OpenAI API、Mistral AI、检索增强生成（RAG)、向量搜索。"
       ]
     },
     {
       "title": [
         "Testing and tooling",
-        "Testing dan tooling"
+        "Testing dan tooling",
+        "测试与工具"
       ],
       "description": [
+        "Cypress, Gherkin, Storybook, Git, Figma, Amplitude.",
         "Cypress, Gherkin, Storybook, Git, Figma, Amplitude.",
         "Cypress, Gherkin, Storybook, Git, Figma, Amplitude."
       ]
@@ -369,7 +528,7 @@
     "kodegiri": {
       "name": "Kodegiri",
       "url": "https://linkedin.com/in/ashandi-leonadi",
-      "logo": "/assets/images/companies/kodegiri.svg"
+      "logo": "/assets/images/companies/kodegiri.png"
     },
     "rakamin": {
       "name": "Rakamin Academy",

@@ -57,6 +57,9 @@ objects to change the number of projects; use an empty array to omit project row
 Articles also use unique slugs. Keep at least one article for the bookshelf.
 `category` and `description` use `[English, Indonesian]`; the second value falls
 back to English when omitted. `body` contains the English article paragraphs.
+Set an optional `url` (`https://…`) for an article published elsewhere, such as
+Medium: the shelf links straight to it, no local page is built, and `body` may
+be omitted.
 Article titles retain their authored language. Dates use `YYYY-MM-DD`, `readTime`
 is a positive number of minutes, and `coverColor` is a six-digit hex value.
 Use your own cover image under `public/assets/images/` and update `image`.
@@ -86,7 +89,9 @@ and `npm test`. Preview narrow and wide screens, both languages and themes.
 ## Experience and expertise
 
 `experience` contains companyId, role, period, location, and `[English, Indonesian]`
-summary text. `expertise` contains translated title and description arrays.
+summary text. Optional `highlights` is a list of `[English, Indonesian]` bullet
+pairs, and optional `stack` is a list of tool names shown as small tags.
+`expertise` contains translated title and description arrays.
 Both accept any number of entries, including an empty list. The demo timeline
 is explicitly fictional. Replace it with your own employment history.
 

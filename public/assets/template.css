@@ -28,6 +28,11 @@
 .experience-copy h3, .expertise-item h3 { font-size: .875rem; line-height: 1.5; font-weight: 550; letter-spacing: -.02em; }
 .experience-copy p, .expertise-item p { font-size: .8125rem; line-height: 1.7; color: var(--secondary); }
 .experience-copy .experience-role { color: var(--ink); }
+.experience-highlights { display: grid; gap: 4px; margin: 2px 0 0; padding: 0; list-style: none; }
+.experience-highlights li { position: relative; padding-left: 16px; font-size: .8125rem; line-height: 1.65; color: var(--secondary); text-wrap: pretty; }
+.experience-highlights li::before { content: ''; position: absolute; left: 2px; top: .8em; width: 7px; height: 1px; background: var(--muted); }
+.experience-stack { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 2px; padding: 0; list-style: none; }
+.experience-stack li { padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--secondary); font-size: .6875rem; line-height: 1.6; }
 .expertise-list { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 32px; }
 .expertise-item { display: grid; align-content: start; gap: 8px; }
 .project-facts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px 28px; margin-top: 28px; }

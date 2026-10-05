@@ -18,8 +18,13 @@ export function setupContact({ email, footer }) {
   link.replaceWith(wrapper);
   wrapper.append(button, status);
 
-  const isIndonesian = () => document.documentElement.lang === 'id';
-  const label = () => button.setAttribute('aria-label', `${isIndonesian() ? 'Salin alamat email' : 'Copy email address'}: ${email}`);
+  const strings = {
+    en: { copy: 'Copy email address', copied: 'Copied!', manual: 'Copy manually:', selected: 'Address selected. Copy it manually.' },
+    id: { copy: 'Salin alamat email', copied: 'Tersalin!', manual: 'Salin secara manual:', selected: 'Teks dipilih. Salin secara manual.' },
+    zh: { copy: '复制邮箱地址', copied: '已复制!', manual: '请手动复制:', selected: '已选中地址,请手动复制。' },
+  };
+  const t = () => strings[document.documentElement.lang] || strings.en;
+  const label = () => button.setAttribute('aria-label', `${t().copy}: ${email}`);
   label();
   new MutationObserver(label).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   let timer;
@@ -27,19 +32,19 @@ export function setupContact({ email, footer }) {
     clearTimeout(timer);
     try {
       await navigator.clipboard.writeText(email);
-      status.textContent = isIndonesian() ? 'Tersalin!' : 'Copied!';
+      status.textContent = t().copied;
       timer = setTimeout(() => { status.textContent = ''; }, 2000);
     } catch {
       const range = document.createRange();
       range.selectNodeContents(address);
       const selection = getSelection();
       if (!selection) {
-        status.textContent = isIndonesian() ? `Salin secara manual: ${email}` : `Copy manually: ${email}`;
+        status.textContent = `${t().manual} ${email}`;
         return;
       }
       selection.removeAllRanges();
       selection.addRange(range);
-      status.textContent = isIndonesian() ? 'Teks dipilih. Salin secara manual.' : 'Address selected. Copy it manually.';
+      status.textContent = t().selected;
     }
   });
 }

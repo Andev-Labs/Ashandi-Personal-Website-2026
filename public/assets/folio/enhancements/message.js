@@ -5,7 +5,8 @@ export function setupMessage() {
   const trigger = document.createElement('a');
   trigger.className = 'message-trigger';
   trigger.href = '#contact';
-  const label = () => { trigger.textContent = document.documentElement.lang === 'id' ? 'Kirim pesan ↗' : 'Send message ↗'; };
+  const labels = { en: 'Send message ↗', id: 'Kirim pesan ↗', zh: '发送消息 ↗' };
+  const label = () => { trigger.textContent = labels[document.documentElement.lang] || labels.en; };
   label();
   new MutationObserver(label).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   trigger.addEventListener('click', event => {
