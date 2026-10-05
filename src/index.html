@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta.title}}</title>
+  <meta name="description" content="{{meta.description}}">
+  <meta name="author" content="{{profile.name}}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#080808">
+  <script>(()=>{let theme='dark';try{theme=localStorage.getItem('ds.theme')||localStorage.getItem('portfolio-theme')||'dark'}catch{}document.documentElement.dataset.theme=['light','dark'].includes(theme)?theme:'dark'})();</script>
+  <link rel="canonical" href="{{meta.url}}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{profile.name}}">
+  <meta property="og:title" content="{{meta.title}}">
+  <meta property="og:description" content="{{meta.description}}">
+  <meta property="og:url" content="{{meta.url}}">
+  <meta property="og:image" content="{{meta.imageUrl}}">
+  <meta property="og:image:type" content="{{meta.imageType}}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{meta.description}}">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{meta.title}}">
+  <meta name="twitter:description" content="{{meta.description}}">
+  <meta name="twitter:image" content="{{meta.imageUrl}}">
+  <meta name="twitter:image:alt" content="{{meta.description}}">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/folio/home.css">
+  <link rel="stylesheet" href="/assets/folio/enhancements/styles.css">
+  <link rel="stylesheet" href="/assets/folio/enhancements/golden.css">
+  <link rel="stylesheet" href="/assets/folio/enhancements/typography.css">
+  <link rel="stylesheet" href="/assets/template.css">
+  <script src="/assets/folio/enhancements/boot.js"></script>
+  <script src="/assets/site-data.js" defer></script>
+  <script src="/assets/folio/recovery.js" defer></script>
+  <script src="/assets/folio/home.js" defer></script>
+  <script type="application/ld+json">{{structuredData}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main data-portrait-mode="{{profile.portraitMode}}" class="folio" id="main">
+    <div class="column-measure" aria-hidden="true"><span id="column-width">600 px</span></div>
+    <header class="intro" id="top">
+      <div class="masthead">
+        <span class="place">{{profile.location}} <span class="quiet">/</span> <time id="jakarta-time" aria-label="Local time">{{profile.timeLabel}}</time></span>
+        <div class="page-controls">
+          <div class="language-picker">
+            <button type="button" class="language-toggle" id="language-toggle" aria-haspopup="menu" aria-expanded="false" aria-controls="language-menu" aria-label="Language"><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#language"></use></svg><span id="current-language">EN</span><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#chevron-down"></use></svg></button>
+            <div class="language-menu" id="language-menu" role="menu" aria-label="Language" hidden>
+              <span class="menu-heading" id="language-heading">Language</span>
+              <button type="button" role="menuitemradio" aria-checked="true" data-locale="auto"><span><span id="auto-label">Automatic</span><small id="auto-language">Browser language</small></span><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#check"></use></svg></button>
+              <div class="menu-divider" role="separator"></div>
+              <button type="button" role="menuitemradio" aria-checked="false" data-locale="en" lang="en"><span>English</span><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#check"></use></svg></button>
+              <button type="button" role="menuitemradio" aria-checked="false" data-locale="id" lang="id"><span>Bahasa Indonesia</span><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#check"></use></svg></button>
+            </div>
+          </div>
+          <span class="control-divider" aria-hidden="true"></span>
+          <button type="button" class="theme-control" id="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+            <svg class="theme-icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#sun"></use></svg>
+            <svg class="theme-icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#moon"></use></svg>
+            <span class="control-tooltip" id="theme-label">Dark mode</span>
+          </button>
+        </div>
+      </div>
+      <div class="portrait-line annotated">
+        <figure class="portrait" id="portrait" data-gaze="center" role="img" aria-label="Portrait of {{profile.name}}, following the cursor">
+          <div class="portrait-theme portrait-light" aria-hidden="true"><img src="{{profile.portrait}}" sizes="(max-width: 680px) 336px, 360px" width="1254" height="1254" alt="" class="portrait-fallback" decoding="async" fetchpriority="high"><span class="portrait-sprite is-active" data-layer="a"></span><span class="portrait-sprite" data-layer="b"></span></div>
+          <div class="portrait-theme portrait-dark" aria-hidden="true"><img src="{{profile.portraitDark}}" sizes="(max-width: 680px) 336px, 360px" width="1254" height="1254" alt="" class="portrait-fallback" decoding="async"><span class="portrait-sprite is-active" data-layer="a"></span><span class="portrait-sprite" data-layer="b"></span></div>
+        </figure>
+        <div class="portrait-atmosphere"><div class="starfield" aria-hidden="true"><i class="star star-a"></i><i class="star star-b"></i><i class="star star-c"></i><i class="star star-d"></i><i class="star star-e"></i><i class="shooting-star shooting-one"></i><i class="shooting-star shooting-two"></i></div><p class="slogan">{{profile.slogan}}</p></div>
+        <span class="margin-note note-left" data-copy="notePortrait" aria-hidden="true">{{copy.notePortrait}}</span>
+      </div>
+      <div class="name-block annotated">
+        <h1>{{profile.name}}</h1>
+        <p class="role" data-copy="role">{{copy.role}}</p>
+        <span class="margin-note note-right" data-copy="noteType" aria-hidden="true">{{copy.noteType}}</span>
+      </div>
+      <div class="intro-copy">
+        <p data-copy="introOne">{{copy.introOne}}</p>
+        <p data-copy="introTwo">{{copy.introTwo}}</p>
+        <p data-copy="introThree">{{copy.introThree}}</p>
+      </div>
+      <div class="intro-actions">
+        <a class="contact-link" href="mailto:{{profile.email}}?subject=Let%27s%20make%20something" data-copy="letsTalk">{{copy.letsTalk}}</a>
+        <button class="notes-toggle" id="notes-toggle" type="button" aria-pressed="false"><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#viewfinder-circle"></use></svg><span data-copy="openNotes">{{copy.openNotes}}</span></button>
+      </div>
+    </header>
+    <section class="section annotated" id="work" aria-labelledby="work-title">
+      <div class="section-heading"><h2 id="work-title" data-copy="workHeading">{{copy.workHeading}}</h2><span class="section-aside" data-copy="workAside">{{copy.workAside}}</span></div>
+      <span class="margin-note note-left" data-copy="noteWork" aria-hidden="true">{{copy.noteWork}}</span>
+      <div class="work-list">
+{{projects}}
+      </div>
+    </section>
+    <section class="section writing-section annotated" id="writing" aria-labelledby="writing-title">
+      <div class="section-heading"><h2 id="writing-title" data-copy="writingHeading">{{copy.writingHeading}}</h2><a class="section-aside" href="{{profile.writingUrl}}" target="_blank" rel="noreferrer" data-copy="allWriting">{{copy.allWriting}}</a></div>
+      <p class="section-intro" data-copy="writingIntro">{{copy.writingIntro}}</p>
+      <span class="margin-note note-right" data-copy="noteShelf" aria-hidden="true">{{copy.noteShelf}}</span>
+      <div class="writing-shelf" id="writing-shelf" role="region" aria-label="Published articles by {{profile.name}}">
+        <div class="book-stage" id="book-stage"><div class="book-lineup" id="book-lineup"></div></div>
+        <div class="shelf-toolbar" id="shelf-toolbar" hidden><span class="shelf-hint" data-copy="shelfHint">{{copy.shelfHint}}</span><div class="shelf-navigation"><span class="book-counter" id="book-counter">01 / 03</span><button type="button" class="icon-button" id="book-prev" aria-label="Previous article"><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#arrow-left"></use></svg></button><button type="button" class="icon-button" id="book-next" aria-label="Next article"><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#arrow-right"></use></svg></button></div></div>
+        <p id="shelf-announcement" lang="en" class="sr-only" role="status" aria-live="polite"></p>
+        <div class="shelf-fallback" id="shelf-fallback">{{articleFallback}}</div>
+      </div>
+    </section>
+    <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading"><h2 id="experience-title" data-copy="experienceHeading">{{copy.experienceHeading}}</h2><span class="section-aside" data-copy="experienceAside">{{copy.experienceAside}}</span></div>
+      <p class="section-intro" data-copy="experienceIntro">{{copy.experienceIntro}}</p>
+      <div class="experience-list">{{experience}}</div>
+    </section>
+    <section class="section expertise-section" id="expertise" aria-labelledby="expertise-title">
+      <div class="section-heading"><h2 id="expertise-title" data-copy="expertiseHeading">{{copy.expertiseHeading}}</h2></div>
+      <p class="section-intro" data-copy="expertiseIntro">{{copy.expertiseIntro}}</p>
+      <div class="expertise-list">{{expertise}}</div>
+    </section>
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="section-heading"><h2 id="about-title" data-copy="aboutHeading">{{copy.aboutHeading}}</h2></div>
+      <p data-copy="aboutOne">{{copy.aboutOne}}</p>
+      <p data-copy="aboutTwo">{{copy.aboutTwo}}</p>
+      <a class="text-link" href="{{profile.experienceUrl}}" target="_blank" rel="noreferrer" data-copy="linkedinHistory">{{copy.linkedinHistory}}</a>
+    </section>
+    <footer class="section contact-section annotated" id="contact">
+      <span class="margin-note note-left" data-copy="noteContact" aria-hidden="true">{{copy.noteContact}}</span>
+      <h2 data-copy="contactHeading">{{copy.contactHeading}}</h2><p data-copy="contactCopy">{{copy.contactCopy}}</p>
+      <a class="email-link" href="mailto:{{profile.email}}?subject=Project%20inquiry">{{profile.email}} <span aria-hidden="true"><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons/heroicons.svg#arrow-up-right"></use></svg></span></a>
+      <nav class="socials" aria-label="Social profiles">{{socials}}</nav>
+      <div class="colophon"><span>© <span id="year">2026</span> {{profile.name}}</span><span data-copy="footerNote">{{copy.footerNote}}</span><a href="/credits/">Credits</a></div>
+    </footer>
+  </main>
+  <dialog class="book-dialog" id="book-dialog" aria-labelledby="dialog-title">
+    <button type="button" class="dialog-close" id="book-close" aria-label="Close article preview"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke-linecap="round"/></svg></button>
+    <div class="book-dialog-inner">
+      <div class="book-inspection">
+        <div class="inspection-visual"><div class="inspection-stage" id="inspection-stage" aria-label="Article cover"><div id="inspection-book"></div></div><div class="rotate-actions"><button type="button" class="icon-button" id="rotate-left" aria-label="Rotate cover left"><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 11a7 7 0 1 0-2 6M19 5v6h-6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><span data-copy="rotateHint">{{copy.rotateHint}}</span><button type="button" class="icon-button" id="rotate-right" aria-label="Rotate cover right"><svg class="hero-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 11a7 7 0 1 0-2 6M19 5v6h-6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div>
+        <div class="inspection-copy"><span class="book-kicker" id="dialog-category"></span><h2 id="dialog-title" lang="en"></h2><p id="dialog-description"></p><span class="byline" id="dialog-byline"></span><a class="read-article" id="dialog-read" href="{{profile.writingUrl}}" target="_blank" rel="noreferrer" data-copy="readArticle">{{copy.readArticle}}</a></div>
+      </div>
+    </div>
+  </dialog>
+  <script type="module" src="/assets/folio/enhancements/main.js"></script>
+</body>
+</html>

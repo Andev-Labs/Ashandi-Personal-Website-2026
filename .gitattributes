@@ -1,0 +1,2 @@
+# Keep upstream font notices byte-for-byte, including their original line endings.
+public/assets/fonts/*.txt -whitespace

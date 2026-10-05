@@ -1,0 +1,28 @@
+/* Warm squared paper: a personal note within the otherwise neutral portfolio. */
+@font-face{font-family:NoteSerif;src:url('/assets/fonts/gentium-plus-latin-regular.woff2') format('woff2');font-display:swap}
+.portrait-atmosphere{align-content:end;gap:6px;height:auto;min-height:120px;padding-bottom:0}
+.message-trigger{z-index:1;margin:4px;font-size:12px}
+.note-dialog{--note-paper:#eeeadd;--note-ink:#302f29;--note-muted:#706d63;box-sizing:border-box;width:min(680px,calc(100% - 32px));max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:17px;color:var(--note-ink);background:var(--note-paper);overflow:auto;box-shadow:0 24px 100px #0005;color-scheme:light}
+.note-dialog::backdrop{background:#08080899;backdrop-filter:blur(5px)}
+.note-dialog[open]{animation:note-arrive 280ms cubic-bezier(.2,.7,.2,1)}
+.note-form{position:relative;isolation:isolate;display:flex;flex-direction:column;min-height:min(720px,calc(100dvh - 32px));padding:40px 40px 24px 54px;background-image:linear-gradient(90deg,transparent 35px,#bd8b7755 35px,#bd8b7755 36px,transparent 36px),linear-gradient(#908c7e20 1px,transparent 1px),linear-gradient(90deg,#908c7e20 1px,transparent 1px);background-size:100% 100%,40px 40px,40px 40px}
+.note-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:40px}
+.note-header h2,[data-proportion=golden] .note-header h2{font:italic 36px/1.25 NoteSerif,Georgia,serif;letter-spacing:-.025em;text-wrap:balance}
+.note-close{display:grid;place-items:center;align-self:flex-start;flex:0 0 40px;height:40px;padding:0;border:0;border-radius:50%;background:#302f290d;color:var(--note-muted);font:28px/1 system-ui}
+.note-close:hover{background:#302f2919;color:var(--note-ink)}
+.note-fields{display:grid;grid-template-columns:100px minmax(0,1fr);gap:8px 16px;align-items:baseline}
+.note-fields label{font-size:14px;line-height:1.5;color:var(--note-muted)}
+.note-fields input{width:100%;min-width:0;min-height:44px;padding:8px 0;border:0;border-bottom:1px solid transparent;border-radius:0;background:transparent;color:var(--note-ink);font:italic 22px/1.3 NoteSerif,Georgia,serif}
+.note-fields input::placeholder,.note-form textarea::placeholder{color:#79766c;opacity:1}
+.note-fields input:focus{outline:none;border-bottom-color:#79766c}
+.note-form textarea{display:block;flex:1;min-height:200px;resize:vertical;width:100%;border:0;border-radius:0;padding:24px 0 12px;margin-top:16px;background:transparent;color:var(--note-ink);font:italic 25px/1.6 NoteSerif,Georgia,serif}
+.note-form textarea:focus-visible{outline:1px dashed #79766c;outline-offset:4px}
+.note-actions{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:24px}
+.note-help{max-width:230px;color:var(--note-muted);font-size:12px;line-height:1.6}
+.note-send{flex-shrink:0;min-height:48px;padding:0 22px;border:0;border-radius:999px;background:#20201c;color:#fff;font-size:14px;box-shadow:0 4px 0 #c7c3b5}
+.note-send:disabled{opacity:.6}
+.note-status{min-height:1.5em;margin-top:12px;font-size:12px;line-height:1.5;color:var(--note-ink)}
+.note-email{align-self:center;margin-top:12px;color:var(--note-muted);font-size:13px;overflow-wrap:anywhere}
+@keyframes note-arrive{from{opacity:0;translate:0 12px;scale:.98}to{opacity:1;translate:0 0;scale:1}}
+@media(max-width:480px){.note-dialog{width:calc(100% - 20px);max-height:calc(100dvh - 20px);border-radius:13px}.note-form{padding:24px 20px 20px 32px;min-height:min(650px,calc(100dvh - 20px));background-image:linear-gradient(90deg,transparent 19px,#bd8b7755 19px,#bd8b7755 20px,transparent 20px),linear-gradient(#908c7e20 1px,transparent 1px),linear-gradient(90deg,#908c7e20 1px,transparent 1px)}.note-header{margin-bottom:24px}.note-header h2,[data-proportion=golden] .note-header h2{font-size:29px}.note-fields{grid-template-columns:1fr;gap:0}.note-fields label{margin-top:10px;font-size:12px}.note-fields input{font-size:20px}.note-form textarea{min-height:160px;font-size:22px;padding-top:12px}.note-actions{flex-direction:column-reverse;align-items:stretch;gap:16px}.note-help{max-width:none}.note-send{width:100%}}
+@media(prefers-reduced-motion:reduce){.note-dialog[open]{animation:none}}

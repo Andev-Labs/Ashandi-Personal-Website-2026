@@ -1,0 +1,390 @@
+{
+  "profile": {
+    "name": "Ashandi Leonadi",
+    "initials": "AL",
+    "location": "Jakarta",
+    "timezone": "Asia/Jakarta",
+    "timeLabel": "GMT+7",
+    "email": "ashandileonadi@gmail.com",
+    "slogan": "Shipping products,\nfrom data to interface.",
+    "portrait": "/assets/images/portrait.webp",
+    "portraitMode": "image",
+    "experienceUrl": "https://linkedin.com/in/ashandi-leonadi",
+    "writingUrl": "/writing/"
+  },
+  "meta": {
+    "url": "https://ashandileonadi.vercel.app/",
+    "description": "Ashandi Leonadi, software product engineer in Jakarta shipping production web and mobile products with React, Next.js, TypeScript, and AI.",
+    "image": "/assets/social-preview.png"
+  },
+  "copy": {
+    "en": {
+      "readArticle": "Read the note ↗",
+      "rotateHint": "Drag to turn",
+      "footerNote": "From data model to interface.",
+      "contactCopy": "If you're building a product and care about how it holds up in real use, I'd love to hear about it.",
+      "contactHeading": "Have something in mind?",
+      "noteContact": "05 / It starts here\nA good product starts with a conversation.",
+      "linkedinHistory": "More on LinkedIn ↗",
+      "aboutTwo": "Since then I've moved closer to the whole product: OpenAI-powered PDF reports, offline-first sync on TanStack DB and GPS telemetry on DynamoDB at MapTrack, and now security remediation and commerce flows for Sampoerna and Teazzi at Zero One Group. I hold a Bachelor of Computer Science from Binus Online Learning (GPA 3.69).",
+      "aboutOne": "I started as a frontend intern at Happy5 in 2020, building PDF exports and end-to-end tests, then stayed on to ship React and React Native apps, lead code reviews, mentor interns, and build a shared component library in Storybook.",
+      "aboutHeading": "A little background",
+      "shelfHint": "Pick a cover to take a closer look.",
+      "noteShelf": "04 / A closer look\nPick up a cover, turn it around, or read the note.",
+      "writingIntro": "Short notes on problems I've worked through in production.",
+      "allWriting": "All notes ↗",
+      "writingHeading": "Notes",
+      "loadingRole": "Design & development",
+      "loadingDetail": "A playground for loading states and interface feedback.",
+      "noteWork": "03 / Side projects\nIndependent products, from idea to deployment.",
+      "workAside": "Independent work",
+      "workHeading": "Built to be used",
+      "openNotes": "Behind the design",
+      "letsTalk": "Let’s talk",
+      "introThree": "Next.js and TypeScript on the front, Supabase, Laravel and DynamoDB behind it, with OpenAI and retrieval-augmented generation where it earns its place.",
+      "introTwo": "Currently at {company:zeroone}. Previously building AI-assisted reports and offline-first field apps at {company:maptrack}, and five years of web and mobile work at {company:happy5}.",
+      "introOne": "I ship production web and mobile products, owning a feature from the data model all the way to the interface people use every day.",
+      "noteType": "02 / Room to read\nA quiet column. Space for the work to speak.",
+      "role": "Software product engineer, from data model to interface.",
+      "notePortrait": "01 / Hello\nAshandi, based in Jakarta.",
+      "experienceHeading": "Where I've worked",
+      "experienceAside": "2020 — Present",
+      "experienceIntro": "Five years shipping web and mobile products, full-time and freelance.",
+      "expertiseHeading": "What I bring to a team",
+      "expertiseIntro": "From the data model to the last pixel of the interface.",
+      "demoNotice": "Independent project by Ashandi Leonadi."
+    },
+    "id": {
+      "role": "Software product engineer, dari model data sampai antarmuka.",
+      "introOne": "Saya membangun produk web dan mobile yang berjalan di production, memegang fitur dari model data sampai antarmuka yang dipakai orang setiap hari.",
+      "introTwo": "Saat ini di {company:zeroone}. Sebelumnya membangun laporan berbasis AI dan aplikasi lapangan offline-first di {company:maptrack}, serta lima tahun mengerjakan web dan mobile di {company:happy5}.",
+      "introThree": "Next.js dan TypeScript di depan, Supabase, Laravel dan DynamoDB di belakang, dengan OpenAI dan retrieval-augmented generation saat memang dibutuhkan.",
+      "letsTalk": "Mari ngobrol ↗",
+      "openNotes": "Di balik desain",
+      "workHeading": "Dibuat untuk dipakai",
+      "workAside": "Karya independen",
+      "writingHeading": "Catatan",
+      "writingIntro": "Catatan singkat tentang masalah yang pernah saya selesaikan di production.",
+      "allWriting": "Semua catatan ↗",
+      "shelfHint": "Pilih cover untuk melihat lebih dekat.",
+      "aboutHeading": "Sedikit latar belakang",
+      "aboutOne": "Saya mulai sebagai frontend intern di Happy5 pada 2020, membuat ekspor PDF dan end-to-end test, lalu lanjut membangun aplikasi React dan React Native, memimpin code review, membimbing intern, dan membuat component library di Storybook.",
+      "aboutTwo": "Sejak itu saya semakin dekat ke produk secara utuh: laporan PDF berbasis OpenAI, sinkronisasi offline-first dengan TanStack DB dan telemetri GPS di DynamoDB di MapTrack, dan kini perbaikan keamanan serta alur commerce untuk Sampoerna dan Teazzi di Zero One Group. Lulusan S1 Ilmu Komputer Binus Online Learning (IPK 3.69).",
+      "linkedinHistory": "Selengkapnya di LinkedIn ↗",
+      "contactHeading": "Punya sesuatu yang ingin dibangun?",
+      "contactCopy": "Kalau kamu sedang membangun produk dan peduli bagaimana produk itu bertahan saat dipakai, saya senang mendengarnya.",
+      "footerNote": "Dari model data sampai antarmuka.",
+      "rotateHint": "Geser untuk memutar",
+      "readArticle": "Baca catatannya ↗",
+      "notePortrait": "01 / Halo\nAshandi, berbasis di Jakarta.",
+      "noteType": "02 / Ruang untuk membaca\nKolom yang tenang. Ruang untuk karya berbicara.",
+      "noteWork": "03 / Proyek sampingan\nProduk independen, dari ide sampai rilis.",
+      "noteShelf": "04 / Lihat lebih dekat\nAmbil cover, putar, atau baca catatannya.",
+      "noteContact": "05 / Mulai di sini\nProduk yang baik dimulai dari percakapan.",
+      "experienceHeading": "Tempat saya bekerja",
+      "experienceAside": "2020 — Sekarang",
+      "experienceIntro": "Lima tahun membangun produk web dan mobile, full-time maupun freelance.",
+      "expertiseHeading": "Yang saya bawa ke dalam tim",
+      "expertiseIntro": "Dari model data sampai piksel terakhir di antarmuka.",
+      "demoNotice": "Proyek independen oleh Ashandi Leonadi."
+    }
+  },
+  "projects": [
+    {
+      "slug": "shopbot-assistant",
+      "title": "Shopbot Assistant",
+      "sector": "AI · E-commerce",
+      "description": [
+        "AI shopping assistant on WhatsApp for small online sellers.",
+        "Asisten belanja AI di WhatsApp untuk penjual online kecil."
+      ],
+      "role": "Next.js · Supabase · OpenAI · WhatsApp Cloud API",
+      "year": "2025",
+      "label": "Independent project",
+      "body": [
+        "Shopbot Assistant answers shoppers on WhatsApp on behalf of small e-commerce sellers.",
+        "Retrieval-augmented generation over Supabase vector search grounds every reply in the shop's own catalogue, so product recommendations and support answers stay accurate as the catalogue changes."
+      ],
+      "contributions": [
+        "RAG over Supabase vector search",
+        "WhatsApp Cloud API integration",
+        "Catalogue-grounded replies"
+      ],
+      "companyId": "independent"
+    },
+    {
+      "slug": "expense-tracker",
+      "title": "Expense Tracker",
+      "sector": "Personal finance",
+      "description": [
+        "Personal finance app with spending categories and visual breakdowns.",
+        "Aplikasi keuangan pribadi dengan kategori pengeluaran dan visualisasi."
+      ],
+      "role": "Laravel · Inertia.js · React.js · SQLite · Shadcn UI",
+      "year": "2025",
+      "label": "Independent project",
+      "body": [
+        "Expense Tracker categorises spending and shows where the money goes with visual breakdowns.",
+        "Server-driven UI through Inertia.js gives SPA responsiveness without maintaining a separate API layer."
+      ],
+      "contributions": [
+        "Spending categorisation",
+        "Visual breakdowns",
+        "Inertia.js server-driven UI"
+      ],
+      "companyId": "independent"
+    },
+    {
+      "slug": "stoqu-inamawangi",
+      "title": "Stoqu Inamawangi",
+      "sector": "Inventory",
+      "description": [
+        "Inventory and order management with real-time stock movement.",
+        "Manajemen inventori dan pesanan dengan pergerakan stok real-time."
+      ],
+      "role": "Go · React.js · Next.js",
+      "year": "2024",
+      "label": "Independent project",
+      "body": [
+        "Stoqu Inamawangi handles real-time stock movement and customer order processing.",
+        "The backend is written in Go, chosen for concurrent write throughput."
+      ],
+      "contributions": [
+        "Real-time stock movement",
+        "Order processing",
+        "Go backend for concurrent writes"
+      ],
+      "companyId": "independent"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "offline-first-field-apps",
+      "title": "Offline-first field apps",
+      "short": "Offline-first field apps",
+      "category": [
+        "Engineering",
+        "Engineering"
+      ],
+      "publication": "Notes",
+      "date": "2026-03-01",
+      "readTime": 2,
+      "coverColor": "#e5e1d5",
+      "image": "/assets/images/notes/offline-first-field-apps.svg",
+      "description": [
+        "Keeping field crews recording in low-signal areas.",
+        "Membuat kru lapangan tetap bisa mencatat di area sinyal lemah."
+      ],
+      "body": [
+        "At MapTrack, field crews work where signal drops out. Rebuilding the data layer on TanStack DB made the app offline first: crews keep recording, and changes sync automatically once connectivity returns."
+      ]
+    },
+    {
+      "slug": "ai-generated-reports",
+      "title": "From form definitions to print-ready reports",
+      "short": "From form definitions to print-ready reports",
+      "category": [
+        "AI",
+        "AI"
+      ],
+      "publication": "Notes",
+      "date": "2025-11-01",
+      "readTime": 2,
+      "coverColor": "#d4ddcf",
+      "image": "/assets/images/notes/ai-generated-reports.svg",
+      "description": [
+        "Replacing a manual report step with OpenAI.",
+        "Mengganti langkah laporan manual dengan OpenAI."
+      ],
+      "body": [
+        "Field teams used to prepare reports by hand. An OpenAI-powered PDF generation system now turns custom form definitions into structured, print-ready reports."
+      ]
+    },
+    {
+      "slug": "typescript-without-pausing",
+      "title": "Migrating to TypeScript without pausing delivery",
+      "short": "Migrating to TypeScript without pausing delivery",
+      "category": [
+        "Frontend",
+        "Frontend"
+      ],
+      "publication": "Notes",
+      "date": "2024-06-01",
+      "readTime": 2,
+      "coverColor": "#dde3ec",
+      "image": "/assets/images/notes/typescript-without-pausing.svg",
+      "description": [
+        "Incremental migration over a big-bang rewrite.",
+        "Migrasi bertahap, bukan rewrite sekaligus."
+      ],
+      "body": [
+        "At Happy5 and Kodegiri, legacy JavaScript moved to TypeScript module by module, so type safety landed across the product while features kept shipping."
+      ]
+    }
+  ],
+  "socials": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/ashandileo"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/ashandi-leonadi"
+    },
+    {
+      "label": "Website",
+      "url": "https://ashandileonadi.vercel.app"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Product Engineer",
+      "period": "Jun 2026 — Present",
+      "location": "Jakarta · Full-time",
+      "summary": [
+        "Security remediation across Sampoerna apps, plus the Teazzi back office and customer ordering flows.",
+        "Perbaikan keamanan di aplikasi Sampoerna, serta back office dan alur pemesanan pelanggan Teazzi."
+      ],
+      "companyId": "zeroone"
+    },
+    {
+      "role": "Software Product Engineer",
+      "period": "Oct 2024 — May 2026",
+      "location": "Remote · Freelance",
+      "summary": [
+        "OpenAI-powered PDF reports, offline-first sync on TanStack DB, GPS telemetry on DynamoDB, and an interactive asset map.",
+        "Laporan PDF berbasis OpenAI, sinkronisasi offline-first dengan TanStack DB, telemetri GPS di DynamoDB, dan peta aset interaktif."
+      ],
+      "companyId": "maptrack"
+    },
+    {
+      "role": "Frontend Web Engineer",
+      "period": "Mar 2024 — Jun 2024",
+      "location": "Remote · Freelance",
+      "summary": [
+        "Revamped the VRMS web app and migrated it to TypeScript.",
+        "Merombak aplikasi web VRMS dan migrasi ke TypeScript."
+      ],
+      "companyId": "kodegiri"
+    },
+    {
+      "role": "Frontend Web Engineer",
+      "period": "Mar 2022 — Apr 2022",
+      "location": "Remote · Freelance",
+      "summary": [
+        "Production React components with React Query and Styled Components.",
+        "Komponen React production dengan React Query dan Styled Components."
+      ],
+      "companyId": "rakamin"
+    },
+    {
+      "role": "Frontend Web Engineer",
+      "period": "Jul 2021 — Feb 2022",
+      "location": "Remote · Freelance",
+      "summary": [
+        "Rebuilt legacy pages in Next.js and created shared API utilities.",
+        "Membangun ulang halaman lama dengan Next.js dan membuat utilitas API bersama."
+      ],
+      "companyId": "smarteschool"
+    },
+    {
+      "role": "Frontend Web and Mobile Engineer",
+      "period": "Mar 2021 — Dec 2025",
+      "location": "Remote · Full-time",
+      "summary": [
+        "Led code reviews, mentored interns, built a Storybook component library, Cypress E2E, and the Happy5 Culture app in React Native.",
+        "Memimpin code review, membimbing intern, membuat component library Storybook, E2E Cypress, dan aplikasi Happy5 Culture dengan React Native."
+      ],
+      "companyId": "happy5"
+    },
+    {
+      "role": "Frontend Web Engineer, Intern",
+      "period": "May 2020 — Mar 2021",
+      "location": "Remote · Internship",
+      "summary": [
+        "PDF export for performance reviews and Cypress end-to-end tests.",
+        "Ekspor PDF untuk review kinerja dan end-to-end test Cypress."
+      ],
+      "companyId": "happy5"
+    }
+  ],
+  "expertise": [
+    {
+      "title": [
+        "Frontend",
+        "Frontend"
+      ],
+      "description": [
+        "React.js, Next.js, React Native, Angular, Tailwind CSS, Shadcn UI, React Hook Form, Zod.",
+        "React.js, Next.js, React Native, Angular, Tailwind CSS, Shadcn UI, React Hook Form, Zod."
+      ]
+    },
+    {
+      "title": [
+        "Backend and data",
+        "Backend dan data"
+      ],
+      "description": [
+        "Laravel, Inertia.js, Supabase, PostgreSQL, SQLite, DynamoDB, TanStack Query and DB.",
+        "Laravel, Inertia.js, Supabase, PostgreSQL, SQLite, DynamoDB, TanStack Query dan DB."
+      ]
+    },
+    {
+      "title": [
+        "AI",
+        "AI"
+      ],
+      "description": [
+        "OpenAI API, Mistral AI, retrieval-augmented generation, vector search.",
+        "OpenAI API, Mistral AI, retrieval-augmented generation, vector search."
+      ]
+    },
+    {
+      "title": [
+        "Testing and tooling",
+        "Testing dan tooling"
+      ],
+      "description": [
+        "Cypress, Gherkin, Storybook, Git, Figma, Amplitude.",
+        "Cypress, Gherkin, Storybook, Git, Figma, Amplitude."
+      ]
+    }
+  ],
+  "companies": {
+    "zeroone": {
+      "name": "Zero One Group",
+      "url": "https://linkedin.com/in/ashandi-leonadi",
+      "logo": "/assets/images/companies/zeroone.svg"
+    },
+    "maptrack": {
+      "name": "MapTrack",
+      "url": "https://linkedin.com/in/ashandi-leonadi",
+      "logo": "/assets/images/companies/maptrack.svg"
+    },
+    "happy5": {
+      "name": "Happy5",
+      "url": "https://happy5.co/",
+      "logo": "/assets/images/companies/happy5.svg"
+    },
+    "kodegiri": {
+      "name": "Kodegiri",
+      "url": "https://linkedin.com/in/ashandi-leonadi",
+      "logo": "/assets/images/companies/kodegiri.svg"
+    },
+    "rakamin": {
+      "name": "Rakamin Academy",
+      "url": "https://www.rakamin.com/",
+      "logo": "/assets/images/companies/rakamin.svg"
+    },
+    "smarteschool": {
+      "name": "Smarteschool",
+      "url": "https://linkedin.com/in/ashandi-leonadi",
+      "logo": "/assets/images/companies/smarteschool.svg"
+    },
+    "independent": {
+      "name": "Independent",
+      "url": "https://github.com/ashandileo",
+      "logo": "/assets/images/companies/independent.svg"
+    }
+  }
+}

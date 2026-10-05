@@ -1,21 +1,12 @@
-node_modules
+node_modules/
+dist/
+.preview/
 .DS_Store
-dist
-dist-ssr
-*.local
-.env*
-.nitro
-.tanstack
-.wrangler
-.output
-.vinxi
-__unconfig*
-todos.json
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/
 
-# typescript
-*.tsbuildinfo
-
-# local agent runtime
-.multica
-.omp
-AGENTS.md
+# Dedicated public template repository (independent Git history).
+/public-template/

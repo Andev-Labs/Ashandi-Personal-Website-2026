@@ -1,0 +1,89 @@
+/* A cover turns into a small reading card, with the shelf retained behind it. */
+.book-stage {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+.book-stage::-webkit-scrollbar { display: none; }
+.book-lineup {
+  grid-template-columns: none;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 2 * var(--space-group, 20px)) / 3);
+}
+.publication { scroll-snap-align: start; }
+.book-dialog {
+  width: min(440px, calc(100% - 32px));
+  max-height: calc(100dvh - 40px);
+  border-radius: 24px;
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  background: var(--paper);
+  box-shadow: 0 32px 100px #00000040, 0 4px 16px #00000018;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+.book-dialog::-webkit-scrollbar { display: none; }
+.book-dialog[open] { animation: none; }
+.book-dialog[data-closing=true] { animation: none; }
+.book-dialog::backdrop { background: #00000040; backdrop-filter: blur(6px); }
+.book-dialog-inner {
+  position: relative; isolation: isolate; padding: 20px 28px 28px;
+  max-height: inherit; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none;
+}
+.book-dialog-inner::-webkit-scrollbar { display: none; }
+.book-dialog-inner::before {
+  content: ''; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(ellipse at 85% 5%, color-mix(in srgb, var(--card-accent) 75%, transparent), transparent 55%),
+    radial-gradient(ellipse at 5% 15%, color-mix(in srgb, var(--card-accent) 40%, transparent), transparent 48%);
+}
+.book-dialog-inner::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .12;
+  background-image: url('/assets/images/writing/paper-grain.svg');
+}
+.book-dialog .dialog-close {
+  position: absolute; top: 16px; right: 16px; z-index: 2;
+  display: grid; place-items: center; width: 40px; height: 40px; padding: 0;
+  border-radius: 50%; background: color-mix(in srgb, var(--paper) 60%, transparent);
+  color: var(--ink); transition: background 160ms ease, scale 160ms ease;
+}
+.book-dialog .dialog-close:hover { background: var(--paper); }
+.book-dialog .dialog-close:active { scale: .96; }
+.dialog-close kbd { margin-left: auto; }
+.book-inspection { display: flex; flex-direction: column; align-items: stretch; gap: 12px; padding-top: 32px; }
+.inspection-copy { text-align: center; }
+.inspection-stage {
+  --book-w: 142px; --book-h: 196px; --book-depth: 10px;
+  min-height: 218px; place-items: center; padding-left: 0; cursor: default;
+}
+.inspection-stage .cover-edition { padding: 10px 11px 8px 13px; font-size: 6px; }
+.inspection-stage .cover-image { height: 83px; }
+.inspection-stage .book-object--illustrated .cover-image { height: 100%; }
+.inspection-stage .cover-title { padding: 11px 10px 5px 13px; font-size: 16px; }
+.inspection-stage .cover-bottom { padding: 8px 10px 11px 13px; font-size: 6px; }
+.rotate-actions { display: none; }
+.book-kicker { display: block; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--secondary); }
+:root .book-dialog .inspection-copy h2 { font-size: 25px; line-height: 1.16; letter-spacing: -.035em; margin-top: 10px; }
+:root .book-dialog .inspection-copy p { font-size: 14px; line-height: 1.55; margin-top: 18px; color: var(--secondary); }
+.book-dialog .byline { font-size: 11px; line-height: 1.5; margin-top: 12px; }
+#book-dialog .read-article.selection-control {
+  display: flex; justify-content: center; gap: 10px; width: 100%; min-height: 46px;
+  margin-top: 24px; padding: 10px 18px; border-radius: 999px;
+  background: var(--ink); color: var(--paper); border: none; text-decoration: none;
+  font-size: 13px; line-height: 1.2;
+}
+#book-dialog .read-article.selection-control:hover { background: var(--ink); opacity: .85; }
+#book-dialog .read-article .selection-handles { display: none; }
+@media (max-width: 680px) {
+  .book-lineup { grid-template-columns: none; grid-auto-columns: 174px; }
+  .book-dialog { width: calc(100% - 24px); max-height: calc(100dvh - 24px); border-radius: 22px; }
+  .book-dialog-inner { padding: 16px 24px 24px; }
+  .inspection-stage { --book-w: 128px; --book-h: 177px; min-height: 196px; }
+  .inspection-stage .cover-image { height: 73px; }
+  .inspection-stage .cover-title { font-size: 14px; }
+  :root .book-dialog .inspection-copy h2 { font-size: 23px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .book-dialog[open], .book-dialog::backdrop { animation: none; }
+}

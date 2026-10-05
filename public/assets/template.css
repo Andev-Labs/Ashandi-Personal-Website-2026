@@ -1,0 +1,45 @@
+/* Template-only content. The original interaction geometry lives in assets/folio/. */
+.work-list { display: grid; gap: 28px; }
+.work-preview img { width: 100%; height: 100%; object-fit: cover; }
+.work-kind .inline-company img { width: 14px; height: 14px; margin-right: 3px; vertical-align: -.2em; }
+.experience-copy .inline-company img { width: 18px; height: 18px; }
+.slogan { white-space: pre-line; }
+.margin-note b { display: block; }
+[data-portrait-mode="image"] .portrait-fallback { inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; opacity: 1 !important; }
+[data-portrait-mode="image"] .portrait-sprite { display: none; }
+/* Real photos: crisp circle, no feathered edge or blend modes (those suit the transparent sprite sheets). */
+[data-portrait-mode="image"] .portrait { mask-image: none; -webkit-mask-image: none; }
+[data-portrait-mode="image"] .portrait-light, [data-portrait-mode="image"] .portrait-dark { mix-blend-mode: normal; transform: none; }
+.article-shell { max-width: 648px; margin: 0 auto; padding: 56px 24px 100px; }
+.article-shell header { margin-bottom: 48px; }
+.article-shell h1 { margin: 16px 0 24px; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.15; text-wrap: balance; }
+.article-shell h2 { margin: 32px 0 12px; }
+.article-shell p { margin: 0 0 24px; color: var(--secondary); line-height: 1.8; }
+.article-shell .article-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin: 24px 0; border-radius: 8px; }
+.article-shell nav { display: flex; gap: 24px; justify-content: space-between; }
+.article-shell a { text-underline-offset: 4px; }
+.article-shell footer { margin-top: 48px; color: var(--secondary); font-size: .875rem; }
+.demo-disclosure, .project-disclosure { color: var(--muted); font-size: .75rem; line-height: 1.7; }
+.demo-disclosure { margin-top: 20px; }
+.experience-list, .expertise-list { display: grid; gap: 28px; margin-top: 24px; }
+.experience-item { display: grid; grid-template-columns: 118px minmax(0,1fr); gap: 24px; }
+.experience-period, .experience-location { color: var(--muted); font-size: .75rem; line-height: 1.7; font-variant-numeric: tabular-nums; }
+.experience-copy { display: grid; gap: 6px; }
+.experience-copy h3, .expertise-item h3 { font-size: .875rem; line-height: 1.5; font-weight: 550; letter-spacing: -.02em; }
+.experience-copy p, .expertise-item p { font-size: .8125rem; line-height: 1.7; color: var(--secondary); }
+.experience-copy .experience-role { color: var(--ink); }
+.expertise-list { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 32px; }
+.expertise-item { display: grid; align-content: start; gap: 8px; }
+.project-facts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px 28px; margin-top: 28px; }
+.project-facts dt { font-size: .75rem; color: var(--muted); margin-bottom: 4px; }
+.project-facts dd { margin: 0; font-size: .875rem; line-height: 1.7; }
+.contribution-list { padding-left: 20px; color: var(--secondary); line-height: 1.8; }
+.contribution-list li + li { margin-top: 8px; }
+.book-lineup { row-gap: 38px; }
+@media (max-width: 680px) {
+  .book-lineup { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 174px; }
+}
+@media (max-width: 440px) {
+  .experience-item { grid-template-columns: 1fr; gap: 8px; }
+  .expertise-list, .project-facts { grid-template-columns: 1fr; }
+}

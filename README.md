@@ -1,21 +1,22 @@
-# TanStack Start + shadcn/ui
+# Ashandi Leonadi — personal website
 
-This is a template for a new TanStack Start project with React, TypeScript, and shadcn/ui.
+Static portfolio built from the [Syrofolio](https://github.com/daniasyrofi/syrofolio) template by Dani Asyrofi, used under the Syrofolio Source-Available License 1.0 (see `LICENSE` and `/credits`).
 
-## Adding components
+## Develop
 
-To add components to your app, run the following command:
+Requires Node.js 22+.
 
-```bash
-npx shadcn@latest add button
+```sh
+npm ci
+npm run dev        # http://127.0.0.1:4310 (override with PORT=...)
 ```
 
-This will place the ui components in the `components` directory.
+Edit content in `content/site.json`. Template docs: `docs/customization.md`, `docs/deployment.md`.
 
-## Using components
+## Verify and build
 
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
+```sh
+npm run check
+npm test
+npm run build      # outputs dist/
 ```

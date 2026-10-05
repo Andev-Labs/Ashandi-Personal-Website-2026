@@ -1,0 +1,62 @@
+/* Content hierarchy, shared by Current and Golden. Touch targets stay independent. */
+#main {
+  --space-tight: .25rem;    /* 4px: compact project title + description */
+  --space-text: .5rem;      /* 8px: title + subtitle / peer actions */
+  --space-prose: .75rem;    /* 12px: paragraphs / separate project metadata */
+  --space-action: 1rem;     /* 16px: text to its action */
+  --space-group: 1.25rem;   /* 20px: heading group to content group */
+  --space-section: 3.5rem;  /* 56px: independent sections */
+  --section-gap: var(--space-section);
+}
+
+/* Each stack owns its spacing. Children do not add a second margin. */
+:root #main :is(.name-block, .intro-copy, .text-stack, .section-heading-copy) {
+  display: grid; gap: var(--space-text);
+}
+:root #main :is(.name-block, .intro-copy, .text-stack, .section-heading-copy, .work-summary) > :is(h1, h2, p, .work-title, .work-description, .work-kind) {
+  margin: 0;
+}
+:root #main :is(.intro-copy, .text-stack) { gap: var(--space-prose); }
+:root #main .work-summary { display: grid; gap: var(--space-tight); }
+:root #main .intro-copy { margin-top: var(--space-group); }
+:root #main .portrait-line { margin-top: var(--space-group); margin-bottom: var(--space-group); row-gap: var(--space-action); }
+:root #main .section-heading { margin-bottom: var(--space-group); }
+:root #main .section-heading.has-subtitle { gap: var(--space-action) var(--space-group); }
+:root #main .section-body { display: grid; gap: var(--space-action); }
+:root #main .section-actions { display: grid; justify-items: start; gap: var(--space-text); }
+:root #main .section-actions > :is(.text-link, .email-copy, .socials) { margin: 0; }
+:root #main .socials { gap: var(--space-text); }
+:root #main .colophon { margin-top: var(--space-group); gap: var(--space-text) var(--space-group); }
+:root.notes-open #main .colophon::before { top: calc(var(--space-group) / -2); }
+
+/* Artwork, text and its action remain separate, including when the row wraps. */
+:root #main .work-item { gap: var(--space-group); }
+:root #main .work-item + .work-item { margin-top: var(--space-group); }
+:root #main .work-preview { flex-basis: 80px; width: 80px; height: 80px; }
+:root #main .work-item > .work-arrow { align-self: center; }
+@media (max-width: 480px) {
+  :root #main .work-item { display: grid; grid-template-columns: minmax(0, 1fr) 44px; row-gap: var(--space-action); }
+  :root #main .work-copy { display: grid; grid-column: 1; grid-row: 2; }
+  :root #main .work-preview { grid-column: 1 / -1; grid-row: 1; }
+  :root #main .work-item > .work-arrow { grid-column: 2; grid-row: 2; justify-self: end; }
+  :root #main #writing .section-heading.has-subtitle { grid-template-columns: minmax(0, 1fr); gap: var(--space-action); }
+  :root #main #writing .section-heading-copy { display: grid; grid-column: 1; grid-row: 1; gap: var(--space-text); }
+  :root #main #writing .section-heading > .section-aside { grid-column: 1; grid-row: 2; justify-self: start; }
+}
+
+/* The shelf used to add margin AND padding above its first card. */
+:root #main #writing .section-heading { margin-bottom: 0; }
+:root #main .shelf-ready .book-stage { margin-top: 0; }
+:root #main .book-lineup { gap: var(--space-group); padding-top: var(--space-group); padding-bottom: 0; }
+:root #main .publication-title { margin-top: var(--space-action); }
+:root #main .publication-meta { margin-top: var(--space-text); }
+
+/* Inline Creative notes participate in the same hierarchy. */
+@media (max-width: 1199px) {
+  :root.notes-open #main .margin-note { margin-top: var(--space-action); }
+  :root.notes-open #main .name-block > .margin-note { margin-top: calc(var(--space-action) - var(--space-text)); }
+  :root.notes-open #main .text-stack > .margin-note { margin-top: calc(var(--space-action) - var(--space-prose)); }
+  :root.notes-open #main .portrait-line > .margin-note { margin-top: 0; }
+  :root.notes-open #main .section > .margin-note { margin-top: 0; margin-bottom: var(--space-group); }
+  :root.notes-open #main #writing > .margin-note { margin-top: var(--space-action); margin-bottom: 0; }
+}

@@ -1,0 +1,66 @@
+/* Optical leading by family and reading role. Unitless values follow text zoom.
+   Proportion presets control type size; leading follows the selected typeface. */
+:root {
+  --leading-display: 1.15;
+  --leading-heading: 1.3;
+  --leading-title: 1.4;
+  --leading-subtitle: 1.35;
+  --leading-body: 1.6;
+  --leading-small: 1.5;
+}
+:root[data-heading-font=instrument-serif] { --leading-display: 1.12; --leading-heading: 1.25; --leading-title: 1.35; }
+:root[data-heading-font=geist] { --leading-display: 1.15; --leading-heading: 1.3; --leading-title: 1.4; }
+:root[data-heading-font=newsreader] { --leading-display: 1.18; --leading-heading: 1.3; --leading-title: 1.4; }
+:root[data-heading-font=instrument-sans] { --leading-display: 1.15; --leading-heading: 1.3; --leading-title: 1.4; }
+:root[data-heading-font=bricolage] { --leading-display: 1.15; --leading-heading: 1.3; --leading-title: 1.4; }
+:root[data-heading-font=manrope] { --leading-display: 1.2; --leading-heading: 1.35; --leading-title: 1.45; }
+:root[data-heading-font=figtree] { --leading-display: 1.15; --leading-heading: 1.3; --leading-title: 1.4; }
+:root[data-heading-font=fraunces] { --leading-display: 1.18; --leading-heading: 1.3; --leading-title: 1.4; }
+:root[data-heading-font=gentium] { --leading-display: 1.2; --leading-heading: 1.35; --leading-title: 1.45; }
+
+:root[data-body-font=instrument-serif] { --leading-body: 1.65; --leading-subtitle: 1.4; --leading-small: 1.55; }
+:root[data-body-font=geist] { --leading-body: 1.55; --leading-subtitle: 1.35; --leading-small: 1.5; }
+:root[data-body-font=newsreader] { --leading-body: 1.6; --leading-subtitle: 1.4; --leading-small: 1.5; }
+:root[data-body-font=instrument-sans] { --leading-body: 1.55; --leading-subtitle: 1.35; --leading-small: 1.5; }
+:root[data-body-font=bricolage] { --leading-body: 1.6; --leading-subtitle: 1.35; --leading-small: 1.5; }
+:root[data-body-font=manrope] { --leading-body: 1.65; --leading-subtitle: 1.4; --leading-small: 1.55; }
+:root[data-body-font=figtree] { --leading-body: 1.55; --leading-subtitle: 1.35; --leading-small: 1.5; }
+:root[data-body-font=fraunces] { --leading-body: 1.6; --leading-subtitle: 1.4; --leading-small: 1.55; }
+:root[data-body-font=gentium] { --leading-body: 1.65; --leading-subtitle: 1.4; --leading-small: 1.55; }
+
+:root #main { line-height: var(--leading-small); }
+:root #main p { line-height: var(--leading-body); }
+:root #main :is(h1, h2, h3, h4, h5, h6) { font-family: var(--creative-heading-font, Inter, sans-serif); }
+:root #main h1 { line-height: var(--leading-display); }
+:root #main :is(h2, h3, h4, h5, h6) { line-height: var(--leading-heading); }
+:root #main :is(.work-title, .publication-title) { line-height: var(--leading-title); }
+:root #main .role { line-height: var(--leading-subtitle); }
+:root #main :is(.text-stack > p, .intro-copy p, .about-section > p, .contact-section > p, .inspection-copy p) { line-height: var(--leading-body); }
+:root #main :is(.section-intro, .work-description, .publication-meta, .work-kind, .colophon, .section-aside, .byline, .book-back p, .slogan, .github-summary, .github-detail, .github-legend, .github-updated) { line-height: var(--leading-small); }
+/* The article dialog is outside #main, but uses the same selected families. */
+:root .book-dialog { font-family: var(--creative-body-font, Inter, sans-serif); line-height: var(--leading-small); }
+:root .book-dialog .inspection-copy h2 { font-family: var(--creative-heading-font, Inter, sans-serif); line-height: var(--leading-heading); }
+:root .book-dialog .inspection-copy p { line-height: var(--leading-body); }
+:root .book-dialog .byline { line-height: var(--leading-small); }
+/* Keep room for Japanese glyphs when the language control changes the copy. */
+:root[lang=ja] #main :is(.text-stack > p, .intro-copy p, .about-section > p, .contact-section > p, .inspection-copy p, .role, h2, h3) { line-height: 1.8; }
+
+@supports (text-box-trim: trim-both) and (text-box-edge: cap alphabetic) {
+  /* Center single-line UI text from its visible cap/descender bounds.
+     Prose keeps the typeface's natural line box for reading rhythm. */
+  :root :is(
+    .language-toggle,
+    .language-menu button,
+    .creative-customizer-trigger,
+    .style-select-trigger,
+    .style-select-option,
+    .creative-segments span,
+    .creative-customizer-actions button,
+    .dialog-close > span:last-of-type,
+    .read-article,
+    .cover-edition
+  ) {
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+}

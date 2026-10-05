@@ -1,0 +1,138 @@
+/* One portrait treatment; theme and gaze keep the original driver. */
+.portrait { background: transparent; isolation: isolate; }
+.portrait .portrait-theme { transition: opacity 260ms ease; }
+.portrait .portrait-light, :root[data-theme=dark] .portrait .portrait-light { display: block; opacity: 1; }
+.portrait .portrait-dark { display: block; opacity: 0; }
+:root[data-theme=dark] .portrait .portrait-light { opacity: 0; }
+:root[data-theme=dark] .portrait .portrait-dark { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .portrait .portrait-theme { transition: none; } }
+@font-face {
+  font-family: CreativeHand; font-style: normal; font-weight: 400;
+  src: url('./vendor/caveat/caveat-regular.woff2') format('woff2'); font-display: swap;
+}
+#main .margin-note {
+  font: 400 20px/1.35 CreativeHand, cursive; text-wrap: pretty;
+  letter-spacing: 0; color: var(--annotation);
+}
+#main .margin-note b {
+  font: inherit; font-size: 22px; line-height: 1.2; margin-bottom: 6px;
+  text-transform: none; letter-spacing: 0;
+}
+#main .margin-note::before {
+  width: 58px; height: 44px; top: 20px; border: 0; opacity: .7;
+  background: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Cpath d='M3 39C8 10 34 6 59 17M49 7Q55 13 59 17Q53 18 48 23' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+#main .note-left::before { right: -62px; }
+#main .note-right::before { left: -62px; transform: scaleX(-1); }
+#main .column-measure { left: -12px; right: -12px; }
+#main .column-measure span { font-size: 10px; font-variant-numeric: tabular-nums; }
+/* Compact switch beside the primary action; its label is a floating tooltip. */
+.hero-message-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; max-width: 100%; }
+#main .portrait-atmosphere {
+  min-width: 0; flex: 1 1 0;
+  container: portrait-actions / inline-size;
+}
+.hero-message-actions { width: 100%; }
+@container portrait-actions (max-width: 13rem) {
+  .hero-message-actions { flex-direction: column-reverse; align-items: flex-end; }
+}
+.creative-switch-group { position: relative; display: inline-flex; flex: 0 0 44px; }
+#main .creative-switch.selection-control {
+  width: 44px; height: 44px; padding: 0;
+}
+.creative-switch-track {
+  display: block; position: relative; width: 32px; height: 20px;
+  border: 1px solid var(--muted); border-radius: 999px; background: var(--soft);
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+.creative-switch-track > span {
+  position: absolute; top: 3px; left: 3px; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--secondary); transition: translate 160ms ease;
+}
+.creative-switch[aria-checked=true] .creative-switch-track { background: var(--annotation); border-color: var(--annotation); }
+.creative-switch[aria-checked=true] .creative-switch-track > span { translate: 12px 0; background: var(--paper); }
+#main .creative-switch:focus-visible { outline: 2px solid var(--annotation); outline-offset: 2px; }
+.creative-switch-tooltip {
+  position: absolute; z-index: 5; left: 50%; bottom: calc(100% + 8px);
+  width: max-content; padding: 7px 10px; border-radius: 6px;
+  background: var(--ink); color: var(--paper); font: 12px/1.5 Inter, sans-serif;
+  opacity: 0; visibility: hidden; translate: -50% 3px; pointer-events: none;
+  transition: opacity 140ms ease, translate 140ms ease, visibility 140ms;
+}
+.creative-switch:focus-visible + .creative-switch-tooltip { opacity: 1; visibility: visible; translate: -50% 0; }
+@media (hover: hover) {
+  .creative-switch-group:hover .creative-switch-tooltip { opacity: 1; visibility: visible; translate: -50% 0; }
+}
+@media (max-width: 480px) { #main .portrait-line { column-gap: 16px; } }
+@media (prefers-reduced-motion: reduce) {
+  .creative-switch-track, .creative-switch-track > span, .creative-switch-tooltip { transition: none; }
+}
+@media (max-width: 1199px) {
+  #main .margin-note { display: none; }
+  .notes-open #main .margin-note {
+    display: block; position: relative; inset: auto; width: auto; max-width: none;
+    margin: 16px 0 0; padding: 0 0 0 42px;
+    border: 0;
+  }
+  .notes-open #main .margin-note::before {
+    display: block; left: 0; right: auto; top: 0; width: 32px; height: 36px;
+    transform: rotate(-90deg);
+  }
+  .notes-open #main .portrait-line { flex-wrap: wrap; }
+  .notes-open #main .portrait-line > .margin-note { flex-basis: 100%; }
+  .notes-open #main .section > .margin-note { margin: 16px 0 24px; }
+  .notes-open #main #contact > .margin-note { margin-bottom: 0; }
+}
+@media (min-width: 1200px) {
+  #main .margin-note { width: 170px; }
+  #main .note-left { right: calc(100% + 62px); }
+  #main .note-right { left: calc(100% + 62px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #main .margin-note { transition: none; transform: none; }
+}
+@media print {
+  #main .margin-note, #main .column-measure, #notes-toggle { display: none !important; }
+  .notes-open #main > .section::before, .notes-open #main .colophon::before { display: none; }
+  .notes-open #main .work-item { outline: none; }
+}
+/* Notes enter softly and reverse from their current visual state. */
+#main .margin-note {
+  opacity: 0; visibility: hidden; transform: translateY(6px); filter: blur(2px);
+  transition: opacity 220ms ease, transform 320ms cubic-bezier(.22,1,.36,1), filter 280ms ease, visibility 0s linear 320ms;
+}
+.notes-open #main .margin-note {
+  opacity: 1; visibility: visible; transform: translateY(0); filter: blur(0);
+  transition-delay: 0s;
+}
+.creative-switch-track { transition: background-color 240ms ease, border-color 240ms ease; }
+.creative-switch-track > span { transition: translate 280ms cubic-bezier(.22,1,.36,1), background-color 240ms ease; }
+@media (max-width: 1199px) {
+  #main .margin-note {
+    display: block; position: relative; inset: auto; width: auto; max-width: none;
+    box-sizing: content-box; height: 0; min-height: 0; overflow: clip;
+    margin: 0; padding: 0 0 0 42px; border: 0;
+    interpolate-size: allow-keywords;
+    transition: display 320ms allow-discrete, height 320ms cubic-bezier(.22,1,.36,1), margin 320ms cubic-bezier(.22,1,.36,1), opacity 220ms ease, transform 320ms ease, filter 280ms ease, visibility 0s linear 320ms;
+  }
+  #main .portrait-line > .margin-note { flex-basis: 100%; }
+  .notes-open #main .margin-note { height: auto; overflow: visible; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #main .margin-note, .creative-switch-track, .creative-switch-track > span { transition: none; filter: none; transform: none; }
+}
+
+@media (max-width: 1199px) {
+  :root:not(.notes-open) #main .margin-note { display: none; }
+  @starting-style {
+    .notes-open #main .margin-note { height: 0; margin-block: 0; opacity: 0; filter: blur(2px); transform: translateY(6px); }
+  }
+}
+/* The arrow leads; JavaScript reveals measured text lines just after it. */
+.notes-open #main .margin-note { filter: none; transform: none; }
+.notes-open #main .margin-note::before { animation: note-arrow-in 120ms ease-out both; }
+@keyframes note-arrow-in { from { opacity: 0; } to { opacity: .7; } }
+@media (prefers-reduced-motion: reduce) {
+  .notes-open #main .margin-note::before { animation: none; }
+}

@@ -1,0 +1,606 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portfolio content",
+  "type": "object",
+  "properties": {
+    "profile": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "initials": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "timeLabel": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "slogan": {
+          "type": "string"
+        },
+        "portrait": {
+          "type": "string"
+        },
+        "portraitMode": {
+          "type": "string",
+          "enum": [
+            "sprite",
+            "image"
+          ]
+        },
+        "experienceUrl": {
+          "type": "string"
+        },
+        "writingUrl": {
+          "type": "string"
+        },
+        "portraitDark": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "initials",
+        "location",
+        "timezone",
+        "timeLabel",
+        "email",
+        "slogan",
+        "portrait",
+        "portraitMode",
+        "experienceUrl",
+        "writingUrl"
+      ]
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "description",
+        "image"
+      ]
+    },
+    "copy": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "object",
+          "properties": {
+            "readArticle": {
+              "type": "string"
+            },
+            "rotateHint": {
+              "type": "string"
+            },
+            "footerNote": {
+              "type": "string"
+            },
+            "contactCopy": {
+              "type": "string"
+            },
+            "contactHeading": {
+              "type": "string"
+            },
+            "noteContact": {
+              "type": "string"
+            },
+            "linkedinHistory": {
+              "type": "string"
+            },
+            "aboutTwo": {
+              "type": "string"
+            },
+            "aboutOne": {
+              "type": "string"
+            },
+            "aboutHeading": {
+              "type": "string"
+            },
+            "shelfHint": {
+              "type": "string"
+            },
+            "noteShelf": {
+              "type": "string"
+            },
+            "writingIntro": {
+              "type": "string"
+            },
+            "allWriting": {
+              "type": "string"
+            },
+            "writingHeading": {
+              "type": "string"
+            },
+            "loadingRole": {
+              "type": "string"
+            },
+            "loadingDetail": {
+              "type": "string"
+            },
+            "noteWork": {
+              "type": "string"
+            },
+            "workAside": {
+              "type": "string"
+            },
+            "workHeading": {
+              "type": "string"
+            },
+            "openNotes": {
+              "type": "string"
+            },
+            "letsTalk": {
+              "type": "string"
+            },
+            "introThree": {
+              "type": "string"
+            },
+            "introTwo": {
+              "type": "string"
+            },
+            "introOne": {
+              "type": "string"
+            },
+            "noteType": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "notePortrait": {
+              "type": "string"
+            },
+            "experienceHeading": {
+              "type": "string"
+            },
+            "experienceAside": {
+              "type": "string"
+            },
+            "experienceIntro": {
+              "type": "string"
+            },
+            "expertiseHeading": {
+              "type": "string"
+            },
+            "expertiseIntro": {
+              "type": "string"
+            },
+            "demoNotice": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "readArticle",
+            "rotateHint",
+            "footerNote",
+            "contactCopy",
+            "contactHeading",
+            "noteContact",
+            "linkedinHistory",
+            "aboutTwo",
+            "aboutOne",
+            "aboutHeading",
+            "shelfHint",
+            "noteShelf",
+            "writingIntro",
+            "allWriting",
+            "writingHeading",
+            "loadingRole",
+            "loadingDetail",
+            "noteWork",
+            "workAside",
+            "workHeading",
+            "openNotes",
+            "letsTalk",
+            "introThree",
+            "introTwo",
+            "introOne",
+            "noteType",
+            "role",
+            "notePortrait",
+            "experienceHeading",
+            "experienceAside",
+            "experienceIntro",
+            "expertiseHeading",
+            "expertiseIntro",
+            "demoNotice"
+          ]
+        },
+        "id": {
+          "type": "object",
+          "properties": {
+            "role": {
+              "type": "string"
+            },
+            "introOne": {
+              "type": "string"
+            },
+            "introTwo": {
+              "type": "string"
+            },
+            "introThree": {
+              "type": "string"
+            },
+            "letsTalk": {
+              "type": "string"
+            },
+            "openNotes": {
+              "type": "string"
+            },
+            "workHeading": {
+              "type": "string"
+            },
+            "workAside": {
+              "type": "string"
+            },
+            "writingHeading": {
+              "type": "string"
+            },
+            "writingIntro": {
+              "type": "string"
+            },
+            "allWriting": {
+              "type": "string"
+            },
+            "shelfHint": {
+              "type": "string"
+            },
+            "aboutHeading": {
+              "type": "string"
+            },
+            "aboutOne": {
+              "type": "string"
+            },
+            "aboutTwo": {
+              "type": "string"
+            },
+            "linkedinHistory": {
+              "type": "string"
+            },
+            "contactHeading": {
+              "type": "string"
+            },
+            "contactCopy": {
+              "type": "string"
+            },
+            "footerNote": {
+              "type": "string"
+            },
+            "rotateHint": {
+              "type": "string"
+            },
+            "readArticle": {
+              "type": "string"
+            },
+            "notePortrait": {
+              "type": "string"
+            },
+            "noteType": {
+              "type": "string"
+            },
+            "noteWork": {
+              "type": "string"
+            },
+            "noteShelf": {
+              "type": "string"
+            },
+            "noteContact": {
+              "type": "string"
+            },
+            "experienceHeading": {
+              "type": "string"
+            },
+            "experienceAside": {
+              "type": "string"
+            },
+            "experienceIntro": {
+              "type": "string"
+            },
+            "expertiseHeading": {
+              "type": "string"
+            },
+            "expertiseIntro": {
+              "type": "string"
+            },
+            "demoNotice": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "role",
+            "introOne",
+            "introTwo",
+            "introThree",
+            "letsTalk",
+            "openNotes",
+            "workHeading",
+            "workAside",
+            "writingHeading",
+            "writingIntro",
+            "allWriting",
+            "shelfHint",
+            "aboutHeading",
+            "aboutOne",
+            "aboutTwo",
+            "linkedinHistory",
+            "contactHeading",
+            "contactCopy",
+            "footerNote",
+            "rotateHint",
+            "readArticle",
+            "notePortrait",
+            "noteType",
+            "noteWork",
+            "noteShelf",
+            "noteContact",
+            "experienceHeading",
+            "experienceAside",
+            "experienceIntro",
+            "expertiseHeading",
+            "expertiseIntro",
+            "demoNotice"
+          ]
+        }
+      },
+      "required": [
+        "en",
+        "id"
+      ]
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "sector": {
+            "type": "string"
+          },
+          "description": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "role": {
+            "type": "string"
+          },
+          "year": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "body": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "contributions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "companyId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "slug",
+          "title",
+          "sector",
+          "description",
+          "role",
+          "year",
+          "label",
+          "body",
+          "contributions",
+          "companyId"
+        ]
+      }
+    },
+    "articles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "short": {
+            "type": "string"
+          },
+          "category": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "publication": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "readTime": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "coverColor": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "description": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "body": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "slug",
+          "title",
+          "short",
+          "category",
+          "publication",
+          "date",
+          "readTime",
+          "coverColor",
+          "image",
+          "description",
+          "body"
+        ]
+      },
+      "minItems": 1
+    },
+    "socials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "url"
+        ]
+      }
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "companyId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "role",
+          "period",
+          "location",
+          "summary",
+          "companyId"
+        ]
+      }
+    },
+    "expertise": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "title",
+          "description"
+        ]
+      }
+    },
+    "companies": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "url",
+          "logo"
+        ]
+      }
+    }
+  },
+  "required": [
+    "profile",
+    "meta",
+    "copy",
+    "projects",
+    "articles",
+    "socials",
+    "experience",
+    "expertise",
+    "companies"
+  ]
+}

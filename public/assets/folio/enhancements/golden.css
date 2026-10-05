@@ -1,0 +1,49 @@
+/*
+ * Golden-ratio experiment. φ = 1.618034; typography uses √φ intermediate steps.
+ * Spacing: 4 × φⁿ. Rem units respond to the reader's preferred text size.
+ * Exceptions: thin borders, icon geometry, and 44px minimum touch targets.
+ */
+:root[data-proportion=golden] {
+  --phi: 1.618034;
+  --gold-space-1: .25rem;      /* 4px */
+  --gold-space-2: .4045rem;    /* 6.47px */
+  --gold-space-3: .6545rem;    /* 10.47px */
+  --gold-space-4: 1.059rem;    /* 16.94px */
+  --gold-space-5: 1.7135rem;   /* 27.42px */
+  --gold-space-6: 2.7725rem;   /* 44.36px */
+  --gold-space-7: 4.486rem;    /* 71.78px */
+  --gold-type-small: .7862rem; /* 16 / √φ ≈ 12.58px */
+  --gold-type-body: 1rem;
+  --gold-type-subtitle: 1.618rem;
+  --gold-type-title: 2.618rem;
+  --gold-radius-control: var(--gold-space-2);
+  --gold-radius-surface: var(--gold-space-3);
+  --gold-radius-dialog: var(--gold-space-4);
+}
+[data-proportion=golden] .folio { max-width: 37.5rem; }
+[data-proportion=golden] h1 { font-size: clamp(2.058rem, 5vw, var(--gold-type-title)); line-height: 1.15; letter-spacing: -.045em; }
+[data-proportion=golden] .role { font-size: clamp(1.272rem, 3.4vw, var(--gold-type-subtitle)); line-height: 1.272; letter-spacing: -.03em; }
+[data-proportion=golden] :is(.intro-copy p, .about-section > p, .contact-section > p) { font-size: var(--gold-type-body); line-height: var(--phi); letter-spacing: -.01em; }
+[data-proportion=golden] #main .text-stack > p { line-height: var(--phi); letter-spacing: -.01em; }
+[data-proportion=golden] h2 { font-size: 1.272rem; line-height: 1.272; }
+[data-proportion=golden] .intro-actions { margin-top: var(--gold-space-5); gap: var(--gold-space-3); }
+[data-proportion=golden] :is(.section-aside,.publication-meta,.work-kind,.colophon,.notes-toggle,.language-toggle) { font-size: var(--gold-type-small); }
+[data-proportion=golden] .work-title { font-size: 1rem; }
+[data-proportion=golden] .work-description { font-size: .875rem; line-height: var(--phi); }
+[data-proportion=golden] .work-preview { border-radius: var(--gold-radius-surface); }
+[data-proportion=golden] :is(.notes-toggle,.language-toggle,.icon-button,.read-article) { border-radius: var(--gold-radius-control); }
+[data-proportion=golden] .language-menu { border-radius: var(--gold-radius-dialog); padding: var(--gold-space-2); }
+/* Nested menu corners: outer radius minus border and padding. */
+[data-proportion=golden] .language-menu button { border-radius: calc(var(--gold-radius-dialog) - var(--gold-space-2) - 1px); }
+[data-proportion=golden] .book-dialog { border-radius: var(--gold-radius-dialog); }
+[data-proportion=golden] .inspection-copy h2 { font-size: var(--gold-type-subtitle); line-height: 1.272; }
+[data-proportion=golden] .book-dialog-inner { padding: var(--gold-space-5); }
+[data-proportion=golden] .publication-title { line-height: var(--phi); }
+/* Covers keep their square printed-book corners; portrait stays circular. */
+@media (max-width: 680px) {
+  [data-proportion=golden] .book-dialog-inner { padding: var(--gold-space-4); }
+}
+@media (max-width: 360px) {
+  [data-proportion=golden] .masthead { font-size: .75rem; }
+  [data-proportion=golden] .language-toggle { padding-inline: 4px; }
+}

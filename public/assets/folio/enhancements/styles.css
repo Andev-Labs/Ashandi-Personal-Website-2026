@@ -1,0 +1,91 @@
+@import url('./message.css');
+@import url('./actions.css');
+@import url('./creative.css');
+@import url('./spacing.css');
+@import url('./customizer.css');
+@import url('./book-detail.css');
+/* Local enhancements. Base page styling is assets/folio/home.css. */
+html.portfolio-boot #main { opacity: 0; }
+[data-reveal-pending] { opacity: 0; }
+.shelf-toolbar[hidden] { display: none; }
+
+/* Readability improvements shared by Current and Golden. */
+.folio { padding-bottom: 100px; }
+.intro-copy p, .about-section > p, .contact-section > p { font-size: 1rem; }
+#main .text-stack > p { color: var(--secondary); font-size: 1rem; line-height: 1.8; letter-spacing: -.014em; }
+:root[lang=ja] #main .text-stack > p { line-height: 1.8; letter-spacing: 0; }
+.publication-title { font-size: .875rem; line-height: 1.6; }
+.publication-title, .cover-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.publication-meta, .work-kind, .colophon { font-size: .75rem; line-height: 1.6; }
+.socials { font-size: .8125rem; }
+.section-aside, .notes-toggle, .language-toggle { font-size: .75rem; }
+.socials a, .theme-control, .language-toggle, .notes-toggle { min-height: 44px; }
+.theme-control { min-width: 44px; }
+.section-heading { flex-wrap: wrap; row-gap: 8px; }
+#main .section-heading.has-subtitle {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+.section-heading-copy { min-width: 0; }
+#main .section-heading.has-subtitle > .section-aside { justify-self: end; }
+@media (max-width: 480px) {
+  #main .section-heading.has-subtitle { grid-template-columns: minmax(0, 1fr); }
+  #main .section-heading.has-subtitle > .section-aside { justify-self: start; }
+}
+.masthead { flex-wrap: wrap; row-gap: 10px; }
+.page-controls { margin-left: auto; }
+.role { text-wrap: balance; }
+/* Preserve the natural paragraph shape; only its final company stays together. */
+.intro-copy [data-copy="introTwo"] { text-wrap: wrap; }
+.company-ending { white-space: nowrap; }
+.publication-title, .inspection-copy h2 { overflow-wrap: anywhere; }
+/* Square work artwork shares the visual height of the three-line description. */
+#main .work-preview { border-radius: 0; }
+/* Section spacing has one owner; design guides never occupy layout space. */
+#main > .section { position: relative; margin-top: var(--section-gap); }
+#main .work-item { border: 0; padding-block: 0; }
+#main .contact-section { border: 0; padding-top: 0; }
+#main .colophon { position: relative; border: 0; padding-top: 0; }
+.notes-open #main > .section::before,
+.notes-open #main .colophon::before {
+  content: ''; position: absolute; left: 0; right: 0; height: 1px;
+  top: calc(var(--section-gap) / -2); background: var(--line); pointer-events: none;
+}
+.notes-open #main .work-item { outline: 1px solid var(--line); outline-offset: 8px; }
+
+/* Copy feedback floats above its control without taking space in the layout. */
+.email-copy { position: relative; width: fit-content; max-width: 100%; }
+#contact button.email-link {
+  padding: 0; border: 0; background: none; color: inherit; font-family: inherit;
+  cursor: pointer; text-align: left; min-height: 44px; max-width: 100%;
+  margin-top: 0;
+}
+.email-link > span { min-width: 0; overflow-wrap: anywhere; }
+.email-link > svg { flex: 0 0 auto; }
+#contact button.email-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.email-copy-status {
+  position: absolute; z-index: 2; bottom: calc(100% + 10px); left: 50%;
+  width: max-content; max-width: min(260px, calc(100vw - 48px));
+  padding: 7px 10px; border-radius: 6px;
+  background: var(--ink); color: var(--paper);
+  box-shadow: 0 3px 12px #0002;
+  font-size: .75rem; line-height: 1.5; text-align: center;
+  pointer-events: none; opacity: 0; translate: -50% 4px;
+  transition: opacity 140ms ease, translate 140ms ease;
+}
+.email-copy-status:not(:empty) { opacity: 1; translate: -50% 0; }
+@media (prefers-reduced-motion: reduce) { .email-copy-status { transition: none; } }
+
+@media (max-width: 400px) {
+  .masthead { gap: 12px; }
+  .page-controls { gap: 4px; }
+  .place { gap: 6px; }
+  .colophon { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) { [data-reveal-pending], html.portfolio-boot #main { opacity: 1; } }
+@media print { #portfolio-style { display: none; } [data-reveal-pending] { opacity: 1; } .folio { padding-bottom: 0; } }
