@@ -6,8 +6,9 @@ Validation errors name the field to fix. Keep English and Indonesian content in 
 
 ## Profile and metadata
 
-`profile.name` updates the heading, footer, article bylines, book backs, metadata,
-and generated favicon initials come from `profile.initials`. `profile.email`
+`profile.name` updates the heading, footer, article bylines, book backs, and metadata.
+The favicons (`public/assets/favicon-32.png`, `favicon-512.png`, `apple-touch-icon.png`)
+are square crops of the portrait; regenerate them if you change the photo. `profile.email`
 updates both the contact address and mail links. No messages are sent by the site:
 the hero action goes to Contact, and the contact button copies your email.
 
