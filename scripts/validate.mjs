@@ -103,6 +103,15 @@ export function validate(site) {
       if (!Array.isArray(item.stack) || !item.stack.length) fail(`experience[${i}].stack`,'must be a non-empty list of tools');
       item.stack.forEach((value,j)=>text(value,`experience[${i}].stack[${j}]`));
     }
+    if (item.recommendation !== undefined) {
+      const rec = item.recommendation;
+      for (const key of ['author','title']) text(rec[key],`experience[${i}].recommendation.${key}`);
+      if (typeof rec.letter !== 'string' || !rec.letter.startsWith('/assets/')) fail(`experience[${i}].recommendation.letter`,'must be a local /assets/ file');
+      for (const key of ['quote','letterLabel']) {
+        if (!Array.isArray(rec[key]) || !rec[key].length) fail(`experience[${i}].recommendation.${key}`,`must be a list of translations in ${locales.join(', ')} order`);
+        else rec[key].forEach((value,k)=>text(value,`experience[${i}].recommendation.${key}[${k}]`));
+      }
+    }
   });
   site.expertise.forEach((item,i)=>{
     for (const key of ['title','description']) {

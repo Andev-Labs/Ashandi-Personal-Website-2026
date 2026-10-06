@@ -296,6 +296,21 @@
         "TanStack DB",
         "DynamoDB"
       ],
+      "recommendation": {
+        "quote": [
+          "Ashandi Leonadi is one of the best feature engineers I've worked with, and I'd take him back on my team in a heartbeat. He's the engineer I hand the things I can't afford to get wrong.",
+          "Ashandi Leonadi adalah salah satu feature engineer terbaik yang pernah bekerja dengan saya, dan saya akan langsung menerimanya kembali di tim saya. Dialah engineer yang saya percayai untuk hal-hal yang tidak boleh salah.",
+          "Ashandi Leonadi 是我共事过的最优秀的功能工程师之一，我会毫不犹豫地让他重回我的团队。凡是绝不能出错的事，我都交给他。"
+        ],
+        "author": "Alex",
+        "title": "Head of Product & Technology, MapTrack",
+        "letter": "/assets/documents/maptrack-recommendation.png",
+        "letterLabel": [
+          "Read the letter of recommendation ↗",
+          "Baca surat rekomendasi ↗",
+          "阅读推荐信 ↗"
+        ]
+      },
       "companyId": "maptrack"
     },
     {
