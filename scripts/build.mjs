@@ -38,8 +38,8 @@ export function build({ site: supplied, outDir = path.join(root, 'dist'), siteUr
   });
   const companyMarkup = (id, linked = true) => {
     const company = site.companies[id];
-    const tag = linked ? 'a' : 'span';
-    return `<${tag} class="inline-company"${linked ? ` href="${escapeHTML(company.url)}"` : ''}><img data-company="${escapeHTML(id)}" src="${escapeHTML(company.logo)}" width="20" height="20" alt="">${escapeHTML(company.name)}</${tag}>`;
+    const tag = linked && company.url ? 'a' : 'span';
+    return `<${tag} class="inline-company"${tag === 'a' ? ` href="${escapeHTML(company.url)}" target="_blank" rel="noreferrer"` : ''}><img data-company="${escapeHTML(id)}" src="${escapeHTML(company.logo)}" width="20" height="20" alt="">${escapeHTML(company.name)}</${tag}>`;
   };
   const authoredCopy = (key,value) => renderCopy(key,value).replace(/\{company:([a-z0-9-]+)\}/g,(_,id)=>companyMarkup(id));
   const copy = Object.fromEntries(Object.entries(site.copy).map(([locale, values]) => [locale, { copy: Object.fromEntries(Object.entries({ ...site.copy.en, ...values }).map(([key,value]) => [key,authoredCopy(key,value)])) }]));

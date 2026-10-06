@@ -131,7 +131,7 @@ h1 { font-size: 28px; line-height: 1.25; font-weight: 620; letter-spacing: -.055
 .inline-company { display: inline; white-space: nowrap; color: var(--ink); }
 .inline-company img { display: inline-block; width: 20px; height: 20px; vertical-align: -.25em; object-fit: contain; margin: 0 4px 0 1px; mix-blend-mode: multiply; }
 :root[data-theme=dark] .inline-company img { filter: invert(1); mix-blend-mode: screen; }
-:root[data-theme=dark] .inline-company img:is([data-company=zeroone],[data-company=maptrack],[data-company=happy5],[data-company=kodegiri],[data-company=rakamin],[data-company=smarteschool]) { filter: brightness(0) invert(1); }
+:root[data-theme=dark] .inline-company img:is([data-company=zeroone],[data-company=maptrack],[data-company=happy5],[data-company=kodegiri],[data-company=rakamin]) { filter: brightness(0) invert(1); }
 .intro-actions { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
 .contact-link { display: inline-flex; align-items: center; gap: 18px; min-height: 40px; font-size: 14px; font-weight: 500; text-decoration: none; }
 .contact-link span { transition: transform 180ms var(--ease); }

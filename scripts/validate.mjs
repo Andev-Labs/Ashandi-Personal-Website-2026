@@ -35,7 +35,7 @@ export function validate(site) {
   if (!site.companies || typeof site.companies !== 'object' || Array.isArray(site.companies)) fail('companies','must be an object of company definitions');
   for(const [id,company] of Object.entries(site.companies)) {
     if(!/^[a-z0-9-]+$/.test(id)) fail('companies','use lowercase company IDs');
-    text(company.name,`companies.${id}.name`); url(company.url,`companies.${id}.url`); url(company.logo,`companies.${id}.logo`);
+    text(company.name,`companies.${id}.name`); if(company.url !== undefined) url(company.url,`companies.${id}.url`); url(company.logo,`companies.${id}.logo`);
     if(!company.logo.startsWith('/assets/')) fail(`companies.${id}.logo`,'must be a local /assets/ logo');
   }
   url(site.meta.image,'meta.image');

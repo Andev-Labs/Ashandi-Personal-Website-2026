@@ -20,6 +20,5 @@ supplied by the site owner (2026-10-05). Only the symbol part of each wordmark i
 kept, with a square viewBox; the Zero One Group mark uses #000 instead of currentColor.
 
 Kodegiri: icon mark cropped from the official colour logo supplied by the site owner.
-Rakamin Academy, Smarteschool: SVG recreations traced from the Rakamin apple-touch-icon
-linked from https://app.rakamin.com/ (2026-10-05) and the Smarteschool logo image supplied by
-the site owner, so the marks can render as white silhouettes in dark mode.
+Rakamin Academy: SVG recreation traced from the Rakamin apple-touch-icon linked from
+https://app.rakamin.com/ (2026-10-05), so the mark can render as a white silhouette in dark mode.

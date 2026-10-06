@@ -360,9 +360,9 @@
       "period": "Jul 2021 — Feb 2022",
       "location": "Remote · Freelance",
       "summary": [
-        "Bringing a school platform's legacy pages up to modern standards for teachers and students.",
-        "Membawa halaman lama platform sekolah ke standar modern untuk guru dan siswa.",
-        "为教师和学生，把学校平台的旧页面提升到现代标准。"
+        "Bringing the legacy pages of Smarteschool, a school platform, up to modern standards for teachers and students.",
+        "Membawa halaman lama Smarteschool, platform sekolah, ke standar modern untuk guru dan siswa.",
+        "为教师和学生，把学校平台 Smarteschool 的旧页面提升到现代标准。"
       ],
       "highlights": [
         [
@@ -381,7 +381,7 @@
         "React",
         "Bootstrap"
       ],
-      "companyId": "smarteschool"
+      "companyId": "itho-indostock"
     },
     {
       "role": "Frontend Web and Mobile Engineer",
@@ -512,33 +512,32 @@
   "companies": {
     "zeroone": {
       "name": "Zero One Group",
-      "url": "https://linkedin.com/in/ashandi-leonadi",
+      "url": "https://zero-one-group.com/",
       "logo": "/assets/images/companies/zeroone.svg"
     },
     "maptrack": {
       "name": "MapTrack",
-      "url": "https://linkedin.com/in/ashandi-leonadi",
+      "url": "https://www.maptrack.com/",
       "logo": "/assets/images/companies/maptrack.svg"
     },
     "happy5": {
       "name": "Happy5",
-      "url": "https://happy5.co/",
+      "url": "https://www.happy5.co/",
       "logo": "/assets/images/companies/happy5.svg"
     },
     "kodegiri": {
       "name": "Kodegiri",
-      "url": "https://linkedin.com/in/ashandi-leonadi",
+      "url": "https://kodegiri.com/",
       "logo": "/assets/images/companies/kodegiri.png"
     },
     "rakamin": {
       "name": "Rakamin Academy",
-      "url": "https://www.rakamin.com/",
+      "url": "https://app.rakamin.com/",
       "logo": "/assets/images/companies/rakamin.svg"
     },
-    "smarteschool": {
-      "name": "Smarteschool",
-      "url": "https://linkedin.com/in/ashandi-leonadi",
-      "logo": "/assets/images/companies/smarteschool.svg"
+    "itho-indostock": {
+      "name": "ITHO Indostock",
+      "logo": "/assets/images/companies/placeholder.svg"
     },
     "independent": {
       "name": "Independent",
