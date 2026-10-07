@@ -40,7 +40,7 @@ export function validate(site) {
   }
   url(site.meta.image,'meta.image');
   if (!/^\/assets\/.+\.(png|jpe?g|webp)$/i.test(site.meta.image)) fail('meta.image','use a local PNG, JPEG, or WebP (1200 × 630 recommended)');
-  const requiredCopy = ['role','introOne','introTwo','introThree','letsTalk','openNotes','workHeading','workAside','writingHeading','writingIntro','allWriting','shelfHint','aboutHeading','aboutOne','aboutTwo','linkedinHistory','downloadCv','contactHeading','contactCopy','footerNote','rotateHint','readArticle','notePortrait','noteType','noteWork','noteShelf','noteContact'];
+  const requiredCopy = ['role','introOne','introTwo','introThree','letsTalk','openNotes','workHeading','workAside','writingHeading','writingIntro','allWriting','shelfHint','aboutHeading','aboutOne','aboutTwo','linkedinHistory','viewCv','contactHeading','contactCopy','footerNote','rotateHint','readArticle','notePortrait','noteType','noteWork','noteShelf','noteContact'];
   for (const locale of locales) {
     if (!site.copy[locale]) fail(`copy.${locale}`,'is required');
     for (const key of requiredCopy) text(site.copy[locale][key],`copy.${locale}.${key}`);

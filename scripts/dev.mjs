@@ -9,7 +9,7 @@ const host = process.env.HOST || '127.0.0.1';
 // Keep the active development preview isolated from production/CI builds.
 const buildOptions = preview ? {} : { outDir:path.join(root,'.preview') };
 let result = build(buildOptions);
-const mime = { '.html':'text/html; charset=utf-8', '.css':'text/css', '.js':'text/javascript', '.json':'application/json', '.svg':'image/svg+xml', '.webp':'image/webp', '.png':'image/png', '.jpg':'image/jpeg', '.woff2':'font/woff2', '.xml':'application/xml', '.txt':'text/plain', '.webmanifest':'application/manifest+json' };
+const mime = { '.html':'text/html; charset=utf-8', '.css':'text/css', '.js':'text/javascript', '.json':'application/json', '.svg':'image/svg+xml', '.webp':'image/webp', '.png':'image/png', '.jpg':'image/jpeg', '.woff2':'font/woff2', '.xml':'application/xml', '.txt':'text/plain', '.pdf':'application/pdf', '.webmanifest':'application/manifest+json' };
 const server = http.createServer((req,res) => {
   if (!['GET','HEAD'].includes(req.method)) { res.writeHead(405,{ Allow:'GET, HEAD' }); res.end(); return; }
   let pathname;

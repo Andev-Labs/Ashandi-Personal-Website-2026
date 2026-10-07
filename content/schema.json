@@ -107,7 +107,7 @@
             "linkedinHistory": {
               "type": "string"
             },
-            "downloadCv": {
+            "viewCv": {
               "type": "string"
             },
             "aboutTwo": {
@@ -200,7 +200,7 @@
             "contactHeading",
             "noteContact",
             "linkedinHistory",
-            "downloadCv",
+            "viewCv",
             "aboutTwo",
             "aboutOne",
             "aboutHeading",
@@ -281,7 +281,7 @@
             "linkedinHistory": {
               "type": "string"
             },
-            "downloadCv": {
+            "viewCv": {
               "type": "string"
             },
             "contactHeading": {
@@ -350,7 +350,7 @@
             "aboutOne",
             "aboutTwo",
             "linkedinHistory",
-            "downloadCv",
+            "viewCv",
             "contactHeading",
             "contactCopy",
             "footerNote",
@@ -420,7 +420,7 @@
             "linkedinHistory": {
               "type": "string"
             },
-            "downloadCv": {
+            "viewCv": {
               "type": "string"
             },
             "contactHeading": {
@@ -489,7 +489,7 @@
             "aboutOne",
             "aboutTwo",
             "linkedinHistory",
-            "downloadCv",
+            "viewCv",
             "contactHeading",
             "contactCopy",
             "footerNote",
